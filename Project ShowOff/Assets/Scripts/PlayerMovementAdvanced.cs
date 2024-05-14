@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerMovementAdvanced : MonoBehaviour
 {
@@ -92,8 +93,13 @@ public class PlayerMovementAdvanced : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down,out RaycastHit hit, playerHeight * 0.5f + 0.2f, whatIsGround);
+        // if (hit.transform != null)
+        // {
+        //     Debug.Log(hit.transform.name);
+        // }
 
+        
         MyInput();
         SpeedControl();
         StateHandler();
@@ -108,6 +114,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //grounded = Physics.Raycast(transform.position, Vector3.down,out RaycastHit hit, playerHeight * 0.5f + 0.2f, whatIsGround);
         MovePlayer();
     }
 
@@ -147,86 +154,93 @@ public class PlayerMovementAdvanced : MonoBehaviour
     bool keepMomentum;
     private void StateHandler()
     {
-        // Mode - Freeze
-        if (freeze)
+        try
         {
-            state = MovementState.freeze;
-            rb.velocity = Vector3.zero;
-            desiredMoveSpeed = 0f;
-        }
-
-        // Mode - Unlimited
-        else if (unlimited)
-        {
-            state = MovementState.unlimited;
-            desiredMoveSpeed = 999f;
-        }
-
-        // Mode - Sliding
-        else if (sliding)
-        {
-            state = MovementState.sliding;
-
-            // increase speed by one every second
-            if (OnSlope() && rb.velocity.y < 0.1f)
+            // Mode - Freeze
+            if (freeze)
             {
-                desiredMoveSpeed = slideSpeed;
-                keepMomentum = true;
+                state = MovementState.freeze;
+                rb.velocity = Vector3.zero;
+                desiredMoveSpeed = 0f;
             }
 
-            else
+            // Mode - Unlimited
+            else if (unlimited)
+            {
+                state = MovementState.unlimited;
+                desiredMoveSpeed = 999f;
+            }
+
+            // Mode - Sliding
+            else if (sliding)
+            {
+                state = MovementState.sliding;
+
+                // increase speed by one every second
+                if (OnSlope() && rb.velocity.y < 0.1f)
+                {
+                    desiredMoveSpeed = slideSpeed;
+                    keepMomentum = true;
+                }
+
+                else
+                    desiredMoveSpeed = sprintSpeed;
+            }
+
+            // Mode - Crouching
+            else if (crouching)
+            {
+                state = MovementState.crouching;
+                desiredMoveSpeed = crouchSpeed;
+            }
+
+            // Mode - Sprinting
+            else if (grounded && Input.GetKey(sprintKey))
+            {
+                state = MovementState.sprinting;
                 desiredMoveSpeed = sprintSpeed;
-        }
-
-        // Mode - Crouching
-        else if (crouching)
-        {
-            state = MovementState.crouching;
-            desiredMoveSpeed = crouchSpeed;
-        }
-
-        // Mode - Sprinting
-        else if (grounded && Input.GetKey(sprintKey))
-        {
-            state = MovementState.sprinting;
-            desiredMoveSpeed = sprintSpeed;
-        }
-
-        // Mode - Walking
-        else if (grounded)
-        {
-            state = MovementState.walking;
-            desiredMoveSpeed = walkSpeed;
-        }
-
-        // Mode - Air
-        else
-        {
-            state = MovementState.air;
-
-            if (moveSpeed < airMinSpeed)
-                desiredMoveSpeed = airMinSpeed;
-        }
-
-        bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
-
-        if (desiredMoveSpeedHasChanged)
-        {
-            if (keepMomentum)
-            {
-                StopAllCoroutines();
-                StartCoroutine(SmoothlyLerpMoveSpeed());
             }
+
+            // Mode - Walking
+            else if (grounded)
+            {
+                state = MovementState.walking;
+                desiredMoveSpeed = walkSpeed;
+            }
+
+            // Mode - Air
             else
             {
-                moveSpeed = desiredMoveSpeed;
+                state = MovementState.air;
+
+                if (moveSpeed < airMinSpeed)
+                    desiredMoveSpeed = airMinSpeed;
             }
+
+            bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
+
+            if (desiredMoveSpeedHasChanged)
+            {
+                if (keepMomentum)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(SmoothlyLerpMoveSpeed());
+                }
+                else
+                {
+                    moveSpeed = desiredMoveSpeed;
+                }
+            }
+
+            lastDesiredMoveSpeed = desiredMoveSpeed;
+
+            // deactivate keepMomentum
+            if (Mathf.Abs(desiredMoveSpeed - moveSpeed) < 0.1f) keepMomentum = false;
         }
-
-        lastDesiredMoveSpeed = desiredMoveSpeed;
-
-        // deactivate keepMomentum
-        if (Mathf.Abs(desiredMoveSpeed - moveSpeed) < 0.1f) keepMomentum = false;
+        catch
+        {
+            Debug.Log("SOMETHING FUCKED UP");
+        }
     }
 
     private IEnumerator SmoothlyLerpMoveSpeed()
@@ -278,7 +292,15 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
         // in air
         else if (!grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            if (rb.velocity.y < 0.5)
+            {
+                Debug.Log("Fall");
+                rb.AddForce(Vector3.down * 13f, ForceMode.Acceleration);
+                
+            }
+        }
 
         // turn gravity off while on slope
         rb.useGravity = !OnSlope();
@@ -356,5 +378,10 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         float mult = Mathf.Pow(10.0f, (float)digits);
         return Mathf.Round(value * mult) / mult;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Debug.DrawLine(transform.position,transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
     }
 }
