@@ -99,6 +99,12 @@ public class WaterCastScript : MonoBehaviour
             if (Physics.Raycast(previousWaterNodes[i], previousWaterNodes[i] - previousWaterNodes[i - 1], out hit, (previousWaterNodes[i] - previousWaterNodes[i - 1]).magnitude))
             {
                 splash.transform.position = hit.point;
+                splash.transform.rotation = Quaternion.LookRotation(hit.normal);
+
+                //splash.transform.LookAt(hit.normal + transform.position);
+
+                Debug.DrawRay(hit.point, hit.normal);
+
                 splash.Play();
                 i = maxCasts;
             }
@@ -242,7 +248,8 @@ public class WaterCastScript : MonoBehaviour
             }
         }
 
-        mesh.vertices = verts; 
+        mesh.vertices = verts;
+        mesh.RecalculateBounds();
         mesh.UploadMeshData(false);
     }
 }
