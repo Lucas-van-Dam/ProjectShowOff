@@ -14,6 +14,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public float sprintSpeed;
     public float slideSpeed;
     public float airMinSpeed;
+    public float airMaxSpeed;
 
     public float speedIncreaseMultiplier;
     public float slopeIncreaseMultiplier;
@@ -45,6 +46,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
     private bool exitingSlope;
+    public bool onslope;
 
     [Header("References")]
 
@@ -92,8 +94,10 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Update()
     {
+        onslope = OnSlope();
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down,out RaycastHit hit, playerHeight * 0.5f + 0.2f, whatIsGround);
+        Debug.DrawLine(transform.position, hit.point);
         // if (hit.transform != null)
         // {
         //     Debug.Log(hit.transform.name);
@@ -215,6 +219,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
                 if (moveSpeed < airMinSpeed)
                     desiredMoveSpeed = airMinSpeed;
+                if (moveSpeed > airMaxSpeed)
+                    desiredMoveSpeed = airMaxSpeed;
+                keepMomentum = true;
             }
 
             bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
@@ -228,6 +235,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
                 }
                 else
                 {
+                    StopAllCoroutines();
                     moveSpeed = desiredMoveSpeed;
                 }
             }
@@ -282,7 +290,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         {
             rb.AddForce(GetSlopeMoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
 
-            if (rb.velocity.y > 0)
+            if (rb.velocity.y < 0)
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
@@ -380,8 +388,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         return Mathf.Round(value * mult) / mult;
     }
 
-    void OnDrawGizmosSelected()
-    {
-        Debug.DrawLine(transform.position,transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
-    }
+    // void OnDrawGizmosSelected()
+    // {
+    //     Debug.DrawLine(transform.position,transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
+    // }
 }
