@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class SpawnPlatform : MonoBehaviour
 {
@@ -16,11 +17,15 @@ public class SpawnPlatform : MonoBehaviour
 
     bool isSpawning;
 
+    int layerMask;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnedObject = Instantiate(spawnedObject);
         spawningGhost = Instantiate(spawningGhost);
+
+        layerMask = (1 << 6);
     }
 
     // Update is called once per frame
@@ -29,7 +34,7 @@ public class SpawnPlatform : MonoBehaviour
         if (isSpawning)
         {
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance, layerMask))
             {
                 spawnPosition = hit.point;
             }
