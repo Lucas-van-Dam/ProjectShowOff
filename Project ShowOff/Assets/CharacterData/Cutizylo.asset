@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49c286fee911ca43b67611ac62e3bba, type: 3}
   m_Name: Cutizylo
   m_EditorClassIdentifier: 
-  CharacterModel: {fileID: 3205470931226847665, guid: 027cd601a225b654abf38e073b913b68,
+  CharacterModel: {fileID: 1144742366114873788, guid: f69eca06e1afd9b43a929a143f3087d1,
     type: 3}
   jumpPower: 14
   walkSpeed: 6

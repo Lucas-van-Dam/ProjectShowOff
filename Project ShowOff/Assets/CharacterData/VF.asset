@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49c286fee911ca43b67611ac62e3bba, type: 3}
   m_Name: VF
   m_EditorClassIdentifier: 
-  CharacterModel: {fileID: 8591577616328827829, guid: 32728df53cdc16d4c91bd1511629b620,
+  CharacterModel: {fileID: 561727653335841996, guid: 61d4d4052e7d5244fa74a74b4695b011,
     type: 3}
   jumpPower: 12
   walkSpeed: 7
