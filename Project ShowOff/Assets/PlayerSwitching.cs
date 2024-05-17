@@ -76,6 +76,6 @@ public class PlayerSwitching : MonoBehaviour
             Destroy(graphicsHolder.transform.GetChild(i).gameObject);
         }
 
-        Instantiate(data.CharacterModel, transform.position, quaternion.identity, graphicsHolder.transform);
+        Instantiate(data.CharacterModel, transform.position + Vector3.down, graphicsHolder.transform.rotation, graphicsHolder.transform);
     }
 }
