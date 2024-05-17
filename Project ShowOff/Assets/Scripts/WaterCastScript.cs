@@ -46,6 +46,12 @@ public class WaterCastScript : MonoBehaviour
 
     [SerializeField]
     float loopSize;
+    [SerializeField]
+    float finalLoopSize;
+
+    [SerializeField]
+    bool isOn;
+    bool wasOff;
 
     // Start is called before the first frame update
     void Start()
@@ -67,12 +73,21 @@ public class WaterCastScript : MonoBehaviour
         }
 
         BuildMesh();
+
+        InitMesh();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isOn = !isOn;
+        }
+
 
         waterNodes[0] = transform.position;
         previousWaterNodes[0] = transform.position;
@@ -92,20 +107,23 @@ public class WaterCastScript : MonoBehaviour
         }
 
 
-        for(int i = 1; i < maxCasts; i++)
+        //RaycastHit hit;
+        //if (Physics.Raycast(previousWaterNodes[1], previousWaterNodes[1] - previousWaterNodes[0], out hit, (previousWaterNodes[i] - previousWaterNodes[i - 1]).magnitude))
+        //{
+        //    UpdateSplash(hit, 0);
+        //    i = maxCasts;
+        //}
+        //else
+        //{
+        //    splash.Stop();
+        //}
+
+        for (int i = 1; i < maxCasts; i++)
         {
             RaycastHit hit;
-            //FIX THIS
             if (Physics.Raycast(previousWaterNodes[i], previousWaterNodes[i] - previousWaterNodes[i - 1], out hit, (previousWaterNodes[i] - previousWaterNodes[i - 1]).magnitude))
             {
-                splash.transform.position = hit.point;
-                splash.transform.rotation = Quaternion.LookRotation(hit.normal);
-
-                //splash.transform.LookAt(hit.normal + transform.position);
-
-                Debug.DrawRay(hit.point, hit.normal);
-
-                splash.Play();
+                UpdateSplash(hit, i);
                 i = maxCasts;
             }
             else
@@ -114,7 +132,24 @@ public class WaterCastScript : MonoBehaviour
             }
         }
 
-        UpdateMesh();
+        if (isOn)
+        {
+            if (wasOff)
+            {
+                InitMesh();
+                mR.enabled = true;
+            }
+
+            UpdateMesh();
+            wasOff = false;
+        }
+        else
+        {
+            mR.enabled = false;
+            wasOff = true;
+            splash.Stop();
+        }
+       
 
         for(int i = 0; i < maxCasts; ++i)
         {
@@ -152,7 +187,8 @@ public class WaterCastScript : MonoBehaviour
             {
 
                 Vector3 offset = previousWaterNodes[node] - transform.position;
-                Vector3 localPosition = Quaternion.AngleAxis((360 / subdivisions) * i, Vector3.up) * Vector3.forward * loopSize;
+                float size = Mathf.Lerp(loopSize, finalLoopSize, node / maxCasts);
+                Vector3 localPosition = Quaternion.AngleAxis((360 / subdivisions) * i, Vector3.up) * Vector3.forward * size;
 
                 //Quaternion pointingAt = Quaternion.LookRotation(previousWaterNodes[node + 1] - previousWaterNodes[node]);
                 //Debug.DrawLine(Vector3.zero , perpendicular);
@@ -234,7 +270,8 @@ public class WaterCastScript : MonoBehaviour
             {
 
                 Vector3 offset = previousWaterNodes[node] - transform.position;
-                Vector3 localPosition = Quaternion.AngleAxis((360 / subdivisions) * i, Vector3.up) * Vector3.forward * loopSize;
+                float size = Mathf.Lerp(loopSize, finalLoopSize, node / (float)maxCasts);
+                Vector3 localPosition = Quaternion.AngleAxis((360 / subdivisions) * i, Vector3.up) * Vector3.forward * size;
 
                 //Quaternion pointingAt = Quaternion.LookRotation(previousWaterNodes[node + 1] - previousWaterNodes[node]);
                 //Debug.DrawLine(Vector3.zero , perpendicular);
@@ -251,6 +288,25 @@ public class WaterCastScript : MonoBehaviour
         mesh.vertices = verts;
         mesh.RecalculateBounds();
         mesh.UploadMeshData(false);
+    }
+
+    void InitMesh()
+    {
+        for(int i = 0; i < previousWaterNodes.Length;i++)
+        {
+            previousWaterNodes[i] = transform.position + Vector3.down * i;
+        }
+    }
+
+    void UpdateSplash(RaycastHit hit, int index)
+    {
+        splash.transform.position = hit.point;
+        splash.transform.rotation = Quaternion.LookRotation(hit.normal);
+
+        Debug.DrawRay(hit.point, hit.normal);
+
+        splash.Play();
+        splash.transform.localScale = Vector3.one * Mathf.Lerp(loopSize * 10, finalLoopSize * 7, index / (float)maxCasts);
     }
 }
 
