@@ -75,6 +75,8 @@ public class WaterCastScript : MonoBehaviour
         BuildMesh();
 
         InitMesh();
+
+        splash = Instantiate(splash);
         
     }
 
@@ -83,7 +85,7 @@ public class WaterCastScript : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             isOn = !isOn;
         }
