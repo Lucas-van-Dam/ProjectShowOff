@@ -32,7 +32,7 @@ public class PlayerSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
             SwitchCharacter();
         }
