@@ -125,6 +125,21 @@ public class WaterCastScript : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(previousWaterNodes[i], previousWaterNodes[i] - previousWaterNodes[i - 1], out hit, (previousWaterNodes[i] - previousWaterNodes[i - 1]).magnitude))
             {
+                if(hit.transform.gameObject.tag == "Extinguishable")
+                {
+                    splash.Stop();
+
+                    ParticleSystem fire = hit.transform.gameObject.GetComponent<ParticleSystem>();
+                    if (fire != null)
+                    {
+                        Debug.Log("SHRINK BITCH");
+                        fire.transform.localScale = new Vector3(1, 1, fire.transform.localScale.z * 0.995f);
+                        if(fire.transform.localScale.z < 0.2f)
+                        {
+                            Destroy( fire );
+                        }
+                    }
+                }
                 UpdateSplash(hit, i);
                 i = maxCasts;
             }
@@ -172,7 +187,7 @@ public class WaterCastScript : MonoBehaviour
                 perpendicular = transform.right;
                 angle = transform.rotation.eulerAngles.x;
 
-                Debug.Log("WAAAAAAAAAA");
+                //Debug.Log("WAAAAAAAAAA");
             }
             else if (node < maxCasts - 1)
             {
@@ -255,7 +270,7 @@ public class WaterCastScript : MonoBehaviour
                 perpendicular = transform.right;
                 angle = transform.rotation.eulerAngles.x + 90;
 
-                Debug.Log("WAAAAAAAAAA");
+                //Debug.Log("WAAAAAAAAAA");
             }
             else if (node < maxCasts - 1)
             {
