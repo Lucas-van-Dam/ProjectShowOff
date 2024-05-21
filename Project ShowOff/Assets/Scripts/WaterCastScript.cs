@@ -136,7 +136,7 @@ public class WaterCastScript : MonoBehaviour
                         fire.transform.localScale = new Vector3(1, 1, fire.transform.localScale.z * 0.995f);
                         if(fire.transform.localScale.z < 0.2f)
                         {
-                            Destroy( fire );
+                            Destroy( fire.gameObject );
                         }
                     }
                 }
