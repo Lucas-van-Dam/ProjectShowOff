@@ -85,7 +85,7 @@ public class WaterCastScript : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             isOn = !isOn;
         }

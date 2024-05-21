@@ -43,7 +43,7 @@ public class SpawnPlatform : MonoBehaviour
                 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distance;
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
             {
                 spawnedObject.transform.position = spawnPosition;
                 spawnedObject.SetActive(true);
@@ -58,7 +58,7 @@ public class SpawnPlatform : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
             {
                 isSpawning = true;
             }
