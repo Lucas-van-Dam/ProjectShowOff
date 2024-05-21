@@ -200,7 +200,7 @@ MonoBehaviour:
     type: 3}
   spawningGhost: {fileID: 9204220471654740166, guid: 34f8e09d0def85a478bb840129e3226e,
     type: 3}
-  distance: 20
+  distance: 15
 --- !u!1 &1230290565712770337
 GameObject:
   m_ObjectHideFlags: 0
