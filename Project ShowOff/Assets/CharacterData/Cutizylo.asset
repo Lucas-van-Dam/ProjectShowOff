@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterModel: {fileID: 1144742366114873788, guid: f69eca06e1afd9b43a929a143f3087d1,
     type: 3}
-  jumpPower: 14
+  jumpPower: 10
   walkSpeed: 6
   sprintSpeed: 11
