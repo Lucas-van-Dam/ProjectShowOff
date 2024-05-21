@@ -132,7 +132,7 @@ public class WaterCastScript : MonoBehaviour
                     ParticleSystem fire = hit.transform.gameObject.GetComponent<ParticleSystem>();
                     if (fire != null)
                     {
-                        Debug.Log("SHRINK BITCH");
+                        //Debug.Log("SHRINK BITCH");
                         fire.transform.localScale = new Vector3(1, 1, fire.transform.localScale.z * 0.995f);
                         if(fire.transform.localScale.z < 0.2f)
                         {
