@@ -124,6 +124,11 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void MyInput()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
