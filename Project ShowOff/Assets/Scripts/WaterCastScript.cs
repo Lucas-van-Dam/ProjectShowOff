@@ -325,6 +325,11 @@ public class WaterCastScript : MonoBehaviour
         splash.Play();
         splash.transform.localScale = Vector3.one * Mathf.Lerp(loopSize * 10, finalLoopSize * 7, index / (float)maxCasts);
     }
+
+    private void OnDisable()
+    {
+        Destroy(splash);
+    }
 }
 
 

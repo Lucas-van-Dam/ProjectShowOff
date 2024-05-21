@@ -64,4 +64,10 @@ public class SpawnPlatform : MonoBehaviour
             }
         }
     }
+
+    private void OnDisable()
+    {
+        Destroy(spawnedObject);
+        Destroy(spawningGhost);
+    }
 }
