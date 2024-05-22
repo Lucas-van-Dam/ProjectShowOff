@@ -90,6 +90,11 @@ public class WaterCastScript : MonoBehaviour
             isOn = !isOn;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            isOn = !isOn;
+        }
+
 
         waterNodes[0] = transform.position;
         previousWaterNodes[0] = transform.position;
@@ -120,35 +125,6 @@ public class WaterCastScript : MonoBehaviour
         //    splash.Stop();
         //}
 
-        for (int i = 1; i < maxCasts; i++)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(previousWaterNodes[i], previousWaterNodes[i] - previousWaterNodes[i - 1], out hit, (previousWaterNodes[i] - previousWaterNodes[i - 1]).magnitude))
-            {
-                if(hit.transform.gameObject.tag == "Extinguishable")
-                {
-                    splash.Stop();
-
-                    ParticleSystem fire = hit.transform.gameObject.GetComponent<ParticleSystem>();
-                    if (fire != null)
-                    {
-                        //Debug.Log("SHRINK BITCH");
-                        fire.transform.localScale = new Vector3(1, 1, fire.transform.localScale.z * 0.995f);
-                        if(fire.transform.localScale.z < 0.2f)
-                        {
-                            Destroy( fire.gameObject );
-                        }
-                    }
-                }
-                UpdateSplash(hit, i);
-                i = maxCasts;
-            }
-            else
-            {
-                splash.Stop();
-            }
-        }
-
         if (isOn)
         {
             if (wasOff)
@@ -157,7 +133,11 @@ public class WaterCastScript : MonoBehaviour
                 mR.enabled = true;
             }
 
-            UpdateMesh();
+            int hitIndex;
+            Vector3 hitPoint;
+            UpdateRaycast(out hitIndex, out hitPoint);
+
+            UpdateMesh(hitIndex, hitPoint);
             wasOff = false;
         }
         else
@@ -256,7 +236,50 @@ public class WaterCastScript : MonoBehaviour
         mF.mesh = mesh;
     }
 
-    void UpdateMesh()
+    void UpdateRaycast(out int hitIndex, out Vector3 hitPoint)
+    {
+        for (int i = 0; i < maxCasts - 1; i++)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(previousWaterNodes[i], previousWaterNodes[i + 1] - previousWaterNodes[i], out hit, (previousWaterNodes[i + 1] - previousWaterNodes[i]).magnitude))
+            {
+
+                if (hit.transform.gameObject.tag == "Extinguishable")
+                {
+                    splash.Stop();
+
+                    ParticleSystem fire = hit.transform.gameObject.GetComponent<ParticleSystem>();
+                    if (fire != null)
+                    {
+                        //Debug.Log("SHRINK -");
+                        fire.transform.localScale = new Vector3(1, 1, fire.transform.localScale.z * 0.995f);
+                        if (fire.transform.localScale.z < 0.2f)
+                        {
+                            Destroy(fire.gameObject);
+                        }
+                    }
+                }
+                UpdateSplash(hit, i);
+
+                hitIndex = i;
+                hitPoint = hit.point;
+
+                Debug.DrawLine(previousWaterNodes[i], hit.point, Color.red);
+
+                return;
+            }
+            else
+            {
+                splash.Stop();
+                Debug.DrawRay(previousWaterNodes[i], previousWaterNodes[i + 1] - previousWaterNodes[i], Color.green);
+            }
+        }
+
+        hitIndex = -1;
+        hitPoint = Vector3.zero;
+    }
+
+    void UpdateMesh(int hitIndex, Vector3 hitPoint)
     {
 
         for (int node = 0; node < maxCasts; node++)
@@ -283,12 +306,37 @@ public class WaterCastScript : MonoBehaviour
                 angle = Vector3.Angle(Vector3.up, previousWaterNodes[node] - previousWaterNodes[node - 1]);
             }
 
+
+            Vector3 offset;
+            float offsetModifier;
+
+            //hitIndex;
+
+            if(hitIndex < 0 || hitIndex > node - 1)
+            {
+                offset = previousWaterNodes[node] - transform.position;
+                offsetModifier = 1f;
+            }
+            else
+            {
+                //offset = previousWaterNodes[hitIndex] - transform.position;
+                offset = hitPoint - transform.position;
+                if (hitIndex == node - 1)
+                {
+                    offsetModifier = 1f;
+                }
+                else
+                {
+                    offsetModifier = 0f;
+                }
+            }
+            
+
             for (int i = 0; i < subdivisions; i++)
             {
 
-                Vector3 offset = previousWaterNodes[node] - transform.position;
                 float size = Mathf.Lerp(loopSize, finalLoopSize, node / (float)maxCasts);
-                Vector3 localPosition = Quaternion.AngleAxis((360 / subdivisions) * i, Vector3.up) * Vector3.forward * size;
+                Vector3 localPosition = Quaternion.AngleAxis((360 / subdivisions) * i, Vector3.up) * Vector3.forward * size * offsetModifier;
 
                 //Quaternion pointingAt = Quaternion.LookRotation(previousWaterNodes[node + 1] - previousWaterNodes[node]);
                 //Debug.DrawLine(Vector3.zero , perpendicular);
