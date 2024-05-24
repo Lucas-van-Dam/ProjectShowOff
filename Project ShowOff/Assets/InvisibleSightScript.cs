@@ -5,7 +5,7 @@ using UnityEngine;
 public class InvisibleSightScript : MonoBehaviour
 {
 
-    [SerializeField] GameObject invisibleParent;
+    [SerializeField] InvisiblePlatformManager invisibleParent;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,9 @@ public class InvisibleSightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.get)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            invisibleParent.TogglePlatforms();
+        }
     }
 }
