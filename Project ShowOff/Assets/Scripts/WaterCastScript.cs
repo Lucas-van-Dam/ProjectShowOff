@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+
 public class WaterCastScript : MonoBehaviour
 {
 
@@ -79,7 +80,7 @@ public class WaterCastScript : MonoBehaviour
         splash = Instantiate(splash);
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -252,6 +253,7 @@ public class WaterCastScript : MonoBehaviour
         mesh.vertices = verts;
         mesh.triangles = tris;
         mesh.UploadMeshData(false);
+        mesh.RecalculateNormals();
 
         mF.mesh = mesh;
     }
