@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BlockDestructionScript : MonoBehaviour
 {
 
-    [SerializeField] Collider collider;
+    [FormerlySerializedAs("collider")] [SerializeField] Collider selfCollider;
 
     void Start()
     {
-        if (collider == null)
+        if (selfCollider == null)
         {
-            collider = GetComponent<Collider>();
+            selfCollider = GetComponent<Collider>();
         }
     }
 

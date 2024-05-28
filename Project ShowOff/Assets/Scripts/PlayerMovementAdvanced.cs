@@ -68,19 +68,19 @@ public class PlayerMovementAdvanced : MonoBehaviour
         sprinting,
         crouching,
         sliding,
-        air
+        air,
+        dashing
     }
 
     public bool sliding;
     public bool crouching;
+
+    public bool dashing;
     
     public bool freeze;
     public bool unlimited;
     
     public bool restricted;
-
-    public TextMeshProUGUI text_speed;
-    public TextMeshProUGUI text_mode;
 
     private void Start()
     {
@@ -107,9 +107,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
-        TextStuff();
-
-        // handle drag
+        
         if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)
             rb.drag = groundDrag;
         else
@@ -128,6 +126,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
         {
             Application.Quit();
         }
+
+        if (dashing)
+            return;
         
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
@@ -165,27 +166,22 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         try
         {
-            // Mode - Freeze
             if (freeze)
             {
                 state = MovementState.freeze;
                 rb.velocity = Vector3.zero;
                 desiredMoveSpeed = 0f;
             }
-
-            // Mode - Unlimited
             else if (unlimited)
             {
                 state = MovementState.unlimited;
                 desiredMoveSpeed = 999f;
             }
-
-            // Mode - Sliding
+            
             else if (sliding)
             {
                 state = MovementState.sliding;
 
-                // increase speed by one every second
                 if (OnSlope() && rb.velocity.y < 0.1f)
                 {
                     desiredMoveSpeed = slideSpeed;
@@ -196,28 +192,24 @@ public class PlayerMovementAdvanced : MonoBehaviour
                     desiredMoveSpeed = sprintSpeed;
             }
 
-            // Mode - Crouching
             else if (crouching)
             {
                 state = MovementState.crouching;
                 desiredMoveSpeed = crouchSpeed;
             }
 
-            // Mode - Sprinting
             else if (grounded && Input.GetKey(sprintKey))
             {
                 state = MovementState.sprinting;
                 desiredMoveSpeed = sprintSpeed;
             }
 
-            // Mode - Walking
             else if (grounded)
             {
                 state = MovementState.walking;
                 desiredMoveSpeed = walkSpeed;
             }
 
-            // Mode - Air
             else
             {
                 state = MovementState.air;
@@ -247,7 +239,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
             lastDesiredMoveSpeed = desiredMoveSpeed;
 
-            // deactivate keepMomentum
             if (Mathf.Abs(desiredMoveSpeed - moveSpeed) < 0.1f) keepMomentum = false;
         }
         catch
@@ -258,7 +249,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private IEnumerator SmoothlyLerpMoveSpeed()
     {
-        // smoothly lerp movementSpeed to desired value
         float time = 0;
         float difference = Mathf.Abs(desiredMoveSpeed - moveSpeed);
         float startValue = moveSpeed;
@@ -287,10 +277,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         if (restricted) return;
 
-        // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        // on slope
         if (OnSlope() && !exitingSlope)
         {
             rb.AddForce(GetSlopeMoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
@@ -299,11 +287,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
-        // on ground
         else if (grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        // in air
         else if (!grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
@@ -315,25 +301,21 @@ public class PlayerMovementAdvanced : MonoBehaviour
             }
         }
 
-        // turn gravity off while on slope
         rb.useGravity = !OnSlope();
     }
 
     private void SpeedControl()
     {
-        // limiting speed on slope
         if (OnSlope() && !exitingSlope)
         {
             if (rb.velocity.magnitude > moveSpeed)
                 rb.velocity = rb.velocity.normalized * moveSpeed;
         }
 
-        // limiting speed on ground or in air
         else
         {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            // limit velocity if needed
             if (flatVel.magnitude > moveSpeed)
             {
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
@@ -346,7 +328,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         exitingSlope = true;
 
-        // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
@@ -372,19 +353,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public Vector3 GetSlopeMoveDirection(Vector3 direction)
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
-    }
-
-    private void TextStuff()
-    {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        if (OnSlope())
-            text_speed.SetText("Speed: " + Round(rb.velocity.magnitude, 1) + " / " + Round(moveSpeed, 1));
-
-        else
-            text_speed.SetText("Speed: " + Round(flatVel.magnitude, 1) + " / " + Round(moveSpeed, 1));
-
-        text_mode.SetText(state.ToString());
     }
 
     public static float Round(float value, int digits)
