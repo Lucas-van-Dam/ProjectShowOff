@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d3c6fdc96d298488ba4c77b6984b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: -4365785086900324700}
+  selfCollider: {fileID: -4365785086900324700}
 --- !u!65 &-4365785086900324700
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -546,6 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb56b7bbbf97c2348a1e6854e83f574c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashForce: 0
+  dashDuration: 0
 --- !u!4 &8633255195829291122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8990797147815725551, guid: 1bea00879b6e58641a267014313bddea,
@@ -731,9 +733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348a31aa4f9df2042a5cc6f517281df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
+  selfCollider: {fileID: 0}
   fireOn: 0
-  particleSystem: {fileID: 0}
+  iceParticleSystem: {fileID: 0}
 --- !u!1001 &7042229958854123555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,7 +758,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 95a0e8d2b7f23364a80ba6d316e528e3, type: 2}
+      objectReference: {fileID: 2100000, guid: a3fd38000d17c2f45980f3114a746b05, type: 2}
     - target: {fileID: 1807311625861027791, guid: 2003c836f2cad954dbfa1990ddc17182,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
