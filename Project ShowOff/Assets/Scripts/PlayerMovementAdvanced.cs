@@ -97,7 +97,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         onslope = OnSlope();
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down,out RaycastHit hit, playerHeight * 0.5f + 0.2f, whatIsGround);
-        Debug.DrawLine(transform.position, hit.point);
+        //Debug.DrawLine(transform.position, hit.point);
         // if (hit.transform != null)
         // {
         //     Debug.Log(hit.transform.name);
