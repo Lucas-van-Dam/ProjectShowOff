@@ -10,7 +10,10 @@ public class InvisibleSightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (invisibleParent == null)
+        {
+            invisibleParent = InvisiblePlatformManager.Instance;
+        }
     }
 
     // Update is called once per frame

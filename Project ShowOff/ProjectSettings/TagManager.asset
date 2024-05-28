@@ -8,6 +8,7 @@ TagManager:
   - Extinguishable
   - Destructible
   - Hideable
+  - Meltable
   layers:
   - Default
   - TransparentFX
