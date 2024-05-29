@@ -7,7 +7,8 @@ public class MeltIce : MonoBehaviour
 {
     [FormerlySerializedAs("collider")] [SerializeField] Collider selfCollider;
     [SerializeField] bool fireOn;
-    [FormerlySerializedAs("particleSystem")] [SerializeField] ParticleSystem iceParticleSystem;
+    [FormerlySerializedAs("particleSystem")] [SerializeField] ParticleSystem FlameThrowerParticles;
+    [FormerlySerializedAs("particleSystem")] [SerializeField] ParticleSystem FlameThrowerLightParticles;
 
     void Start()
     {
@@ -15,10 +16,17 @@ public class MeltIce : MonoBehaviour
         {
             selfCollider = GetComponent<Collider>();
         }
-        if(iceParticleSystem == null)
+        if(FlameThrowerParticles == null)
         {
-            iceParticleSystem = GetComponent<ParticleSystem>();
+            FlameThrowerParticles = GetComponent<ParticleSystem>();
         }
+        if(FlameThrowerLightParticles == null)
+        {
+            FlameThrowerLightParticles = FlameThrowerParticles.GetComponentInChildren<ParticleSystem>();
+        }
+
+        FlameThrowerParticles.Stop();
+        FlameThrowerLightParticles.Stop();
     }
 
     void Update()
@@ -29,11 +37,13 @@ public class MeltIce : MonoBehaviour
             fireOn = !fireOn;
             if(fireOn)
             {
-                iceParticleSystem.Play();
+                FlameThrowerParticles.Play();
+                FlameThrowerLightParticles.Play();
             }
             else
             {
-                iceParticleSystem.Stop();
+                FlameThrowerParticles.Stop();
+                FlameThrowerLightParticles.Stop();
             }
             
         }
@@ -43,17 +53,17 @@ public class MeltIce : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (fireOn)
         {
             if (other.tag == "Meltable")
             {
-                Destroy(other.gameObject);
-            }
-        }
+                other.transform.localScale *= 0.99f;
 
-        if (other.tag == "Meltable")
-        {
-            //other.GetComponent<DestructibleBlock>().StartAnimating();
+                if(other.transform.localScale.y < 0.3f)
+                {
+                    Destroy(other.gameObject);
+                }
+            }
         }
     }
 }

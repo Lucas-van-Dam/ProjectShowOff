@@ -414,6 +414,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.39
       objectReference: {fileID: 0}
@@ -424,8 +429,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
@@ -522,14 +537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flamethrower (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6012653408740059267, guid: ae2c749203ee3974c8aa028e95f08796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7204649386627472015, guid: ae2c749203ee3974c8aa028e95f08796,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8648413807414497904}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2c749203ee3974c8aa028e95f08796, type: 3}
 --- !u!4 &3919292780153743644 stripped
 Transform:
@@ -537,27 +549,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2486965914519777162}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4719618629830587653 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7204649386627472015, guid: ae2c749203ee3974c8aa028e95f08796,
-    type: 3}
-  m_PrefabInstance: {fileID: 2486965914519777162}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8648413807414497904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4719618629830587653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 348a31aa4f9df2042a5cc6f517281df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selfCollider: {fileID: 0}
-  fireOn: 0
-  iceParticleSystem: {fileID: 0}
 --- !u!1001 &2556106756760530494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -648,6 +639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.79
       objectReference: {fileID: 0}
@@ -655,6 +651,16 @@ PrefabInstance:
         type: 3}
       propertyPath: LightsModule.rangeCurve.scalar
       value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4010888629030126445, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
@@ -678,8 +684,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6012653408740059267, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012653408740059267, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
       propertyPath: m_Center.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012653408740059267, guid: ae2c749203ee3974c8aa028e95f08796,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7204649386627472015, guid: ae2c749203ee3974c8aa028e95f08796,
         type: 3}
@@ -729,7 +745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfCollider: {fileID: 0}
   fireOn: 0
-  iceParticleSystem: {fileID: 0}
+  FlameThrowerParticles: {fileID: 0}
+  FlameThrowerLightParticles: {fileID: 0}
 --- !u!1001 &7042229958854123555
 PrefabInstance:
   m_ObjectHideFlags: 0
