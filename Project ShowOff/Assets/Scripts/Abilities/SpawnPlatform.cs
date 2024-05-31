@@ -19,6 +19,9 @@ public class SpawnPlatform : MonoBehaviour
 
     int layerMask;
 
+    [SerializeField]
+    float yOffset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +39,18 @@ public class SpawnPlatform : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance, layerMask))
             {
-                spawnPosition = hit.point;
+                spawnPosition = hit.point + Vector3.up * yOffset;
             }
             else
             {
-                spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distance;
+
+                RaycastHit hit2;
+
+                if (Physics.Raycast(Camera.main.transform.position + Camera.main.transform.forward * distance, Vector3.down, out hit2, distance, layerMask))
+                {
+                    spawnPosition = hit2.point + Vector3.up * yOffset;
+                }
+                    //spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distance;
             }
 
             if (Input.GetKeyDown(KeyCode.Joystick1Button2))
