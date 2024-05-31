@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project ShowOff/Assets/PlaytestTempModels/Rocks/Prefabs/l_boi_and_big Tall.prefab.meta
 guid: b2c6373ca16d8f74988804cf0c27405d
 PrefabImporter:
+========
+guid: 61e6bdc05dc6c24438d70596941f7f57
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> origin/Level-Grayboxing-Shabang:Project ShowOff/Assets/PlaytestTempModels/Environment Assets/Nature assets.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project ShowOff/Assets/PlaytestTempModels/Rocks/Prefabs/rock 1.prefab.meta
 guid: 5f23c7b47fe0daf4a8c5f014d57b9e72
 PrefabImporter:
+========
+guid: c35d6642e57b5e449a926611ad8b520d
+DefaultImporter:
+>>>>>>>> origin/Level-Grayboxing-Shabang:Project ShowOff/Assets/Scenes/Greky area.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
