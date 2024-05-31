@@ -32,7 +32,7 @@ public class MeltIce : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             fireOn = !fireOn;
             if(fireOn)
