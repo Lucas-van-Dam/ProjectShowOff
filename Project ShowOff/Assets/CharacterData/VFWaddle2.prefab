@@ -546,8 +546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb56b7bbbf97c2348a1e6854e83f574c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 0
-  dashDuration: 0
+  dashForce: 1000
+  dashDuration: 2
+  dashJumpForce: 10
+  DashKey: 101
 --- !u!4 &8633255195829291122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8990797147815725551, guid: 1bea00879b6e58641a267014313bddea,

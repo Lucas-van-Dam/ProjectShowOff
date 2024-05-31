@@ -19,6 +19,8 @@ public class ThirdPersonCam : MonoBehaviour
     public GameObject topDownCam;
 
     public CameraStyle currentStyle;
+
+    private PlayerMovementAdvanced pm;
     public enum CameraStyle
     {
         Basic,
@@ -28,12 +30,14 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void Start()
     {
+        pm = player.GetComponent<PlayerMovementAdvanced>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     private void Update()
     {
+        
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientation.forward = viewDir.normalized;
         
@@ -43,7 +47,7 @@ public class ThirdPersonCam : MonoBehaviour
             float verticalInput = Input.GetAxis("Vertical");
             Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-            if (inputDir != Vector3.zero)
+            if (inputDir != Vector3.zero && !pm.dashing)
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
         }
 

@@ -103,12 +103,19 @@ public class PlayerMovementAdvanced : MonoBehaviour
         //     Debug.Log(hit.transform.name);
         // }
 
+        if (dashing)
+        {
+            verticalInput = 0;
+            horizontalInput = 0;
+            return;
+        }
+
         
         MyInput();
         SpeedControl();
         StateHandler();
         
-        if (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching)
+        if (!dashing && (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching))
             rb.drag = groundDrag;
         else
             rb.drag = 0;
@@ -127,8 +134,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
             Application.Quit();
         }
 
-        if (dashing)
-            return;
+
         
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
@@ -275,7 +281,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (restricted) return;
+        if (restricted || dashing) return;
 
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
