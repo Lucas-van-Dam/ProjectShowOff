@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49c286fee911ca43b67611ac62e3bba, type: 3}
   m_Name: Grecky
   m_EditorClassIdentifier: 
-  CharacterModel: {fileID: 3149458497833013703, guid: cada6dde4f91ae84198a5801ad5de30f,
+  CharacterModel: {fileID: 1702474269111866552, guid: b2c162d3d32779547aec9264d49f5ad9,
     type: 3}
-  jumpPower: 4
-  walkSpeed: 4
-  sprintSpeed: 5
+  jumpPower: 0
+  walkSpeed: 8
+  sprintSpeed: 13
