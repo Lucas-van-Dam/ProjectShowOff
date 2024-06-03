@@ -397,6 +397,8 @@ MonoBehaviour:
   slideSpeed: 30
   airMinSpeed: 3
   airMaxSpeed: 5
+  glideSpeed: 2
+  glideDownSpeed: 1
   speedIncreaseMultiplier: 1.5
   slopeIncreaseMultiplier: 2.5
   groundDrag: 4
@@ -404,10 +406,10 @@ MonoBehaviour:
   jumpCooldown: 0.25
   airMultiplier: 0.4
   crouchSpeed: 3.5
-  crouchYScale: 0.5
-  jumpKey: 331
+  crouchYScale: 0.1
+  jumpKey: 32
   sprintKey: 334
-  crouchKey: 277
+  crouchKey: 271
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
@@ -419,6 +421,7 @@ MonoBehaviour:
   state: 0
   sliding: 0
   crouching: 0
+  gliding: 0
   dashing: 0
   freeze: 0
   unlimited: 0

@@ -33,6 +33,7 @@ public class Dash : MonoBehaviour
     {
         if (Input.GetKeyDown(DashKey) && !pm.dashing)
         {
+            StopAllCoroutines();
             StartCoroutine(DoDash());
         }
 
@@ -60,6 +61,7 @@ public class Dash : MonoBehaviour
 
     IEnumerator StopDash()
     {
+        yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => pm.grounded);
         Debug.Log("Stopped Dashing");
         pm.dashing = false;

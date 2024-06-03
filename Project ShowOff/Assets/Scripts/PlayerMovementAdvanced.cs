@@ -15,6 +15,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public float slideSpeed;
     public float airMinSpeed;
     public float airMaxSpeed;
+    public float glideSpeed;
+    public float glideDownSpeed;
 
     public float speedIncreaseMultiplier;
     public float slopeIncreaseMultiplier;
@@ -74,6 +76,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     public bool sliding;
     public bool crouching;
+    public bool gliding;
 
     public bool dashing;
     
@@ -114,6 +117,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
+
+        if (gliding)
+            return;
         
         if (!dashing && (state == MovementState.walking || state == MovementState.sprinting || state == MovementState.crouching))
             rb.drag = groundDrag;
@@ -140,7 +146,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && grounded && !gliding)
         {
             readyToJump = false;
 
@@ -150,21 +156,25 @@ public class PlayerMovementAdvanced : MonoBehaviour
         }
 
         // start crouch
-        if (Input.GetKeyDown(crouchKey) && horizontalInput == 0 && verticalInput == 0)
-        {
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
-            crouching = true;
-        }
 
         // stop crouch
-        if (Input.GetKeyUp(crouchKey))
-        {
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+ 
+    }
 
-            crouching = false;
-        }
+    public void StartDigging()
+    {
+        transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+        rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+        crouching = true;
+    }
+
+    public void StopDigging()
+    {
+        transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+
+        crouching = false;
     }
 
     bool keepMomentum;
@@ -203,6 +213,11 @@ public class PlayerMovementAdvanced : MonoBehaviour
                 state = MovementState.crouching;
                 desiredMoveSpeed = crouchSpeed;
             }
+            
+            else if (gliding)
+            {
+                desiredMoveSpeed = glideSpeed;
+            }
 
             else if (grounded && Input.GetKey(sprintKey))
             {
@@ -215,6 +230,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
                 state = MovementState.walking;
                 desiredMoveSpeed = walkSpeed;
             }
+            
+            
 
             else
             {
@@ -299,12 +316,18 @@ public class PlayerMovementAdvanced : MonoBehaviour
         else if (!grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-            if (rb.velocity.y < 0.5)
+            if (rb.velocity.y < 0.5 && !gliding)
             {
                 Debug.Log("Fall");
                 rb.AddForce(Vector3.down * 13f, ForceMode.Acceleration);
                 
             }
+            
+        }
+
+        if (gliding && rb.velocity.y < 0)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, -glideDownSpeed, rb.velocity.z);
         }
 
         rb.useGravity = !OnSlope();
