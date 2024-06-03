@@ -7,7 +7,9 @@ using UnityEngine;
 public enum Characters
 {
     VF = 0,
-    Cutizylo = 1
+    Cutizylo = 1,
+    Rex = 2,
+    Grecky = 3
 }
 
 public class PlayerSwitching : MonoBehaviour
@@ -22,6 +24,12 @@ public class PlayerSwitching : MonoBehaviour
     
     [Header("Cutizylo")] 
     [SerializeField] private CharacterData CutizyloData;
+
+    [Header("Rex")]
+    [SerializeField] private CharacterData RexData;
+
+    [Header("Grecky")]
+    [SerializeField] private CharacterData GreckyData;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +48,7 @@ public class PlayerSwitching : MonoBehaviour
 
     private void SwitchCharacter()
     {
-        if ((int)currentCharacter < 1)
+        if ((int)currentCharacter < 3)
         {
             currentCharacter++;
         }
@@ -57,7 +65,15 @@ public class PlayerSwitching : MonoBehaviour
             case Characters.Cutizylo:
                 SetVariables(CutizyloData);
                 break;
-            
+
+            case Characters.Rex:
+                SetVariables(RexData);
+                break;
+
+            case Characters.Grecky:
+                SetVariables(GreckyData);
+                break;
+
             default:
                 Debug.LogError("SOMETHING WENT WRONG WITH CHARACTER SWITCHING");
                 break;
