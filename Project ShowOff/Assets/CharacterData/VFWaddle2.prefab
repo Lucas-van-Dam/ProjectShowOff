@@ -258,7 +258,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561727653335841996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5d3c6fdc96d298488ba4c77b6984b13, type: 3}
   m_Name: 
@@ -312,7 +312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashForce: 1000
   dashDuration: 2
-  dashJumpForce: 10
+  dashJumpForceUp: 0
+  dashJumpForceForwards: 0
   DashKey: 101
 --- !u!4 &8633255195829291122 stripped
 Transform:

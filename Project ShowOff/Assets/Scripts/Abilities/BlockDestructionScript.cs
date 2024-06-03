@@ -37,8 +37,8 @@ public class BlockDestructionScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Joystick1Button3))
+            {
             if (other.tag == "Destructible")
             {
                 other.GetComponent<DestructibleBlock>().DestroyThis();
