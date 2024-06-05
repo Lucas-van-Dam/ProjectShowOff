@@ -36,26 +36,17 @@ public class UIManager : MonoBehaviour
     }
 
 
-    void Start()
+    void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            FragmentCollectedEvent();
+        }
     }
 
-    //When an enemy dies, spawn death effects and update currency
-    public void FragmentCollectedEvent(int value)
+    public void FragmentCollectedEvent()
     {
-        if (!infiniMoney)
-        {
-            money += value;
-            MoneyChanged?.Invoke(money);
-        }
-        else MoneyChanged?.Invoke(infiniteMoney);
-
-        Instantiate(explosionEffect, position, Quaternion.identity);
-        GameObject numPopup = Instantiate(cashPopup, position, Quaternion.identity);
-        numPopup.GetComponent<CashPopupScript>().Initialize(value);
-
+        fragments++;
         FragmentCollected?.Invoke(fragments);
-
     }
 }
