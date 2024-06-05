@@ -80,6 +80,32 @@ public class PlayerSwitching : MonoBehaviour
         }
     }
 
+    public void SwitchCharacter(Characters character)
+    {
+        switch (character)
+        {
+            case Characters.VF:
+                SetVariables(VFData);
+                break;
+
+            case Characters.Cutizylo:
+                SetVariables(CutizyloData);
+                break;
+
+            case Characters.Rex:
+                SetVariables(RexData);
+                break;
+
+            case Characters.Grecky:
+                SetVariables(GreckyData);
+                break;
+
+            default:
+                Debug.LogError("SOMETHING WENT WRONG WITH CHARACTER SWITCHING");
+                break;
+        }
+    }
+
     private void SetVariables(CharacterData data)
     {
         movement.walkSpeed = data.walkSpeed;
