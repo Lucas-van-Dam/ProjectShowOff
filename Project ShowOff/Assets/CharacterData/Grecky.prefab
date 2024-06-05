@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greky_FinalModel
       objectReference: {fileID: 0}
+    - target: {fileID: 2322812256318463180, guid: c719549fd81bf984d88092c56b875ae1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1f48ddc758baee4ba37464af95d6356, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
