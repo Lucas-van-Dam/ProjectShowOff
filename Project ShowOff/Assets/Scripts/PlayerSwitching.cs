@@ -40,10 +40,10 @@ public class PlayerSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
-        {
-            SwitchCharacter();
-        }
+        //if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+        //{
+        //    SwitchCharacter();
+        //}
     }
 
     private void SwitchCharacter()
@@ -62,6 +62,32 @@ public class PlayerSwitching : MonoBehaviour
                 SetVariables(VFData);
                 break;
             
+            case Characters.Cutizylo:
+                SetVariables(CutizyloData);
+                break;
+
+            case Characters.Rex:
+                SetVariables(RexData);
+                break;
+
+            case Characters.Grecky:
+                SetVariables(GreckyData);
+                break;
+
+            default:
+                Debug.LogError("SOMETHING WENT WRONG WITH CHARACTER SWITCHING");
+                break;
+        }
+    }
+
+    public void SwitchCharacter(Characters character)
+    {
+        switch (character)
+        {
+            case Characters.VF:
+                SetVariables(VFData);
+                break;
+
             case Characters.Cutizylo:
                 SetVariables(CutizyloData);
                 break;
