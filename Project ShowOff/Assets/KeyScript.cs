@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class KeyScript : MonoBehaviour
 {
 
+    int fragments;
+
     [SerializeField]
-    Image[] keyStages;
+    Sprite[] keyStages;
     [SerializeField]
     Image keyBar;
 
@@ -15,6 +17,9 @@ public class KeyScript : MonoBehaviour
     int[] fragNeededPerLevel;
     [SerializeField]
     float[] imageFillPerLevel;
+
+
+
 
     // Start is called before the first frame update
     void Start()
