@@ -10,12 +10,13 @@ public class CharacterSwitchingSign : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("111");
         if (other.gameObject.tag == "Player")
         {
-            //Debug.Log("222");
+            if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+            {
+                other.gameObject.GetComponent<PlayerSwitching>().SwitchCharacter(switchTo);
+            }
 
-            other.gameObject.GetComponent<PlayerSwitching>().SwitchCharacter(switchTo);
         }
     }
 }
