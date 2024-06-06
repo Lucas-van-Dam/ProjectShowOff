@@ -34,6 +34,8 @@ public class KeyScript : MonoBehaviour
         {
             m_Image = GetComponent<Image>();
         }
+
+        keyBar.fillAmount = 0;
     }
 
     private void OnDestroy()
@@ -61,20 +63,22 @@ public class KeyScript : MonoBehaviour
 
                 keyBar.fillAmount = imageFillPerLevel[i - 1] + levelFill * levelPercentage;
 
-                Debug.Log(fragments);
+                //Debug.Log(fragments);
 
-                Debug.Log(levelPercentage);
+                //Debug.Log(levelPercentage);
 
-                if (fragNeededPerLevel[i] == fragments)
+                if (fragments >= fragNeededPerLevel[i - 1])
                 {
                     m_Image.sprite = keyStages[i];
+                }
+
+                if (levelGot == levelNeeded)
+                {
+                    m_Image.sprite = keyStages[i+1];
                 }
 
                 break;
             }
         }
-
-
     }
-
 }
