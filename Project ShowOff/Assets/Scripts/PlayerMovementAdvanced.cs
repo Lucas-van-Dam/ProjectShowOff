@@ -154,12 +154,28 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+        if (Input.GetKey(KeyCode.Joystick1Button0) && readyToJump && grounded && !gliding)
+        {
+            readyToJump = false;
+
+            Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
+        }
+        if (Input.GetKey(KeyCode.Joystick1Button1) && readyToJump && grounded && !gliding)
+        {
+            readyToJump = false;
+
+            Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
+        }
 
         // start crouch
 
 
         // stop crouch
- 
+
     }
 
     public void StartDigging()

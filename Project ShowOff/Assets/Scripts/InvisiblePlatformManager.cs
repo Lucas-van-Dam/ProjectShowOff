@@ -35,6 +35,7 @@ public class InvisiblePlatformManager : MonoBehaviour
         for (int i = 0; i < children.Length; i++)
         {
             children[i] = transform.GetChild(i).GetComponent<MeshRenderer>();
+            children[i].enabled = false;
         }
     }
 
@@ -46,6 +47,17 @@ public class InvisiblePlatformManager : MonoBehaviour
         for (int i = 0; i < children.Length; i++)
         {
             children[i].enabled = visible;
+        }
+    }
+
+    public void DisablePlatforms()
+    {
+
+        visible = false;
+
+        for (int i = 0; i < children.Length; i++)
+        {
+            children[i].enabled = false;
         }
     }
 }

@@ -24,5 +24,16 @@ public class PlayerTriggerHandler : MonoBehaviour
             Destroy(other.gameObject);
             UIManager.instance.FragmentCollectedEvent();
         }
+
+        if(other.tag == "Locked")
+        {
+            if(other.GetComponent<LockScript>() != null)
+            {
+                if(UIManager.instance.keyTier >= other.GetComponent<LockScript>().tier)
+                {
+                    Destroy(other.gameObject);
+                }
+            }
+        }
     }
 }

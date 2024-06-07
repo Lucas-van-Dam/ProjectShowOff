@@ -9,6 +9,8 @@ TagManager:
   - Destructible
   - Hideable
   - Meltable
+  - Fragment
+  - Locked
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Ice
   - 
   - 
   - 

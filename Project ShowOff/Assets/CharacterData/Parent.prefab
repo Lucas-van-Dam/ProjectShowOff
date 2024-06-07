@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 912208624075410279}
   - component: {fileID: 4186754489174104323}
+  - component: {fileID: -3552392393533200591}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -51,6 +52,21 @@ MonoBehaviour:
     type: 3}
   distance: 15
   yOffset: 2
+--- !u!114 &-3552392393533200591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144742366114873788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f75301d2cbece44ca0eba4262a35c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glideKey: 333
+  glideHopUpForce: 14
+  glideHopForwardForce: 6
 --- !u!1001 &7183772192446404714
 PrefabInstance:
   m_ObjectHideFlags: 0
