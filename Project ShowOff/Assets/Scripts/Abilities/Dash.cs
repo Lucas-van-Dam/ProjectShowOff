@@ -54,7 +54,7 @@ public class Dash : MonoBehaviour
         pm.dashing = true;
         rb.velocity = Vector3.zero;
         rb.drag = 0;
-        rb.AddForce(transform.forward * dashForce);
+        rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
         yield return new WaitForSeconds(dashDuration);
         StartCoroutine(StopDash());
     }
