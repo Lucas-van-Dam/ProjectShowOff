@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public static event Action<int> FragmentCollected;
 
     int fragments;
+    public int keyTier;
 
     private void Awake()
     {

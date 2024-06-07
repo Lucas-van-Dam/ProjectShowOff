@@ -70,11 +70,13 @@ public class KeyScript : MonoBehaviour
                 if (fragments >= fragNeededPerLevel[i - 1])
                 {
                     m_Image.sprite = keyStages[i];
+                    UIManager.instance.keyTier = i;
                 }
 
                 if (levelGot == levelNeeded)
                 {
                     m_Image.sprite = keyStages[i+1];
+                    UIManager.instance.keyTier = i + 1;
                 }
 
                 break;

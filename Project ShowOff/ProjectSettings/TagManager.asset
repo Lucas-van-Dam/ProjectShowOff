@@ -10,6 +10,7 @@ TagManager:
   - Hideable
   - Meltable
   - Fragment
+  - Locked
   layers:
   - Default
   - TransparentFX
