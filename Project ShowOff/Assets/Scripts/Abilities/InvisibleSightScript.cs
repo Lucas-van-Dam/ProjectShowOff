@@ -19,7 +19,7 @@ public class InvisibleSightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             invisibleParent.TogglePlatforms();
         }

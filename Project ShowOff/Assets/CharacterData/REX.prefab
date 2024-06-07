@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb56b7bbbf97c2348a1e6854e83f574c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 10
+  dashForce: 20
   dashDuration: 1
   dashJumpForceUp: 20
   dashJumpForceForwards: 10
