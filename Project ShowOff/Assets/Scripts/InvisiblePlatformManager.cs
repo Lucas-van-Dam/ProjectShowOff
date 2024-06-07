@@ -52,6 +52,9 @@ public class InvisiblePlatformManager : MonoBehaviour
 
     public void DisablePlatforms()
     {
+
+        visible = false;
+
         for (int i = 0; i < children.Length; i++)
         {
             children[i].enabled = false;
