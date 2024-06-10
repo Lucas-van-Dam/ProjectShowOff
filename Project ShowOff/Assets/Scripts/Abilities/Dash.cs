@@ -31,30 +31,35 @@ public class Dash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(pm.jumpKey))
+        {
+            if (!pm.dashing)
+                return;
+            
+
+            StopCoroutine(DoDash());
+            rb.AddForce(-transform.right * dashJumpForceForwards + transform.up * dashJumpForceUp);
+            StartCoroutine(StopDash());
+            pm.animator.SetTrigger("DashJump");
+            
+        }
+        
         if (Input.GetKeyDown(DashKey) && !pm.dashing)
         {
             StopAllCoroutines();
             StartCoroutine(DoDash());
         }
 
-        if (Input.GetKeyDown(pm.jumpKey))
-        {
-            if (!pm.dashing)
-                return;
-            
-            StopCoroutine(DoDash());
-            rb.AddForce(transform.forward * dashJumpForceForwards + transform.up * dashJumpForceUp);
-            StartCoroutine(StopDash());
-            
-        }
+
     }
 
     IEnumerator DoDash()
     {
+        pm.animator.SetTrigger("Dash");
         pm.dashing = true;
         rb.velocity = Vector3.zero;
         rb.drag = 0;
-        rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+        rb.AddForce(-transform.right * dashForce, ForceMode.Impulse);
         yield return new WaitForSeconds(dashDuration);
         StartCoroutine(StopDash());
     }

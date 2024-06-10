@@ -57,6 +57,8 @@ public class Gliding : MonoBehaviour
             pm.gliding = false;
             rb.mass = 1;
         }
+        
+        pm.animator.SetBool("Gliding", pm.gliding);
 
     }
 }

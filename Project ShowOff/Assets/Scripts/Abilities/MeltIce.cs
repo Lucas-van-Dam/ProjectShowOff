@@ -5,22 +5,35 @@ using UnityEngine.Serialization;
 
 public class MeltIce : MonoBehaviour
 {
-    [FormerlySerializedAs("collider")] [SerializeField] Collider selfCollider;
-    [SerializeField] bool fireOn;
-    [FormerlySerializedAs("particleSystem")] [SerializeField] ParticleSystem FlameThrowerParticles;
-    [FormerlySerializedAs("particleSystem")] [SerializeField] ParticleSystem FlameThrowerLightParticles;
+    [FormerlySerializedAs("collider")] [SerializeField]
+    Collider selfCollider;
+
+    public bool fireOn;
+
+    [FormerlySerializedAs("particleSystem")] [SerializeField]
+    ParticleSystem FlameThrowerParticles;
+
+    [FormerlySerializedAs("particleSystem")] [SerializeField]
+    ParticleSystem FlameThrowerLightParticles;
+
+    private PlayerMovementAdvanced pm;
+
+    [SerializeField] private WaterCastScript waterCast;
 
     void Start()
     {
+        pm = GetComponentInParent<PlayerMovementAdvanced>();
         if (selfCollider == null)
         {
             selfCollider = GetComponent<Collider>();
         }
-        if(FlameThrowerParticles == null)
+
+        if (FlameThrowerParticles == null)
         {
             FlameThrowerParticles = GetComponent<ParticleSystem>();
         }
-        if(FlameThrowerLightParticles == null)
+
+        if (FlameThrowerLightParticles == null)
         {
             FlameThrowerLightParticles = FlameThrowerParticles.GetComponentInChildren<ParticleSystem>();
         }
@@ -31,23 +44,23 @@ public class MeltIce : MonoBehaviour
 
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
-            fireOn = !fireOn;
-            if(fireOn)
+            if (!fireOn && !waterCast.isOn)
             {
+                fireOn = true;
+                pm.animator.SetBool("Fire", true);
                 FlameThrowerParticles.Play();
                 FlameThrowerLightParticles.Play();
             }
-            else
+            else if (fireOn)
             {
+                fireOn = false;
+                pm.animator.SetBool("Fire", false);
                 FlameThrowerParticles.Stop();
                 FlameThrowerLightParticles.Stop();
             }
-            
         }
-        
     }
 
 
@@ -59,7 +72,7 @@ public class MeltIce : MonoBehaviour
             {
                 other.transform.localScale *= 0.99f;
 
-                if(other.transform.localScale.y < 0.3f)
+                if (other.transform.localScale.y < 0.3f)
                 {
                     Destroy(other.gameObject);
                 }

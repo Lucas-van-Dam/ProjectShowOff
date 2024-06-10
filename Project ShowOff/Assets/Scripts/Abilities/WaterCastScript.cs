@@ -51,12 +51,16 @@ public class WaterCastScript : MonoBehaviour
     float finalLoopSize;
 
     [SerializeField]
-    bool isOn;
+    public bool isOn;
     bool wasOff;
+    
+    [SerializeField] private MeltIce fireScript;
+    private PlayerMovementAdvanced pm;
 
     // Start is called before the first frame update
     void Start()
     {
+        pm = GetComponentInParent<PlayerMovementAdvanced>();
         waterNodes = new Vector3[maxCasts];
         previousWaterNodes = new Vector3[maxCasts];
 
@@ -88,12 +92,30 @@ public class WaterCastScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
-            isOn = !isOn;
+            if (isOn)
+            {
+                pm.animator.SetBool("Water", false);
+                isOn = false;
+            }
+            else if(!fireScript.fireOn)
+            {
+                pm.animator.SetBool("Water", true);
+                isOn = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            isOn = !isOn;
+            if (isOn)
+            {
+                pm.animator.SetBool("Water", false);
+                isOn = false;
+            }
+            else if(!fireScript.fireOn)
+            {
+                pm.animator.SetBool("Water", true);
+                isOn = true;
+            }
         }
 
 

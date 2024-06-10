@@ -50,8 +50,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     private bool exitingSlope;
     public bool onslope;
 
-    [Header("References")]
-
+    [Header("References")] 
+    [HideInInspector] public Animator animator;
     public Transform orientation;
 
     float horizontalInput;
@@ -144,6 +144,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        
+        animator.SetFloat("MoveInput", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
 
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded && !gliding)
@@ -180,15 +182,17 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     public void StartDigging()
     {
-        transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-        rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+        animator.SetBool("Digging", true);
+        //transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+        //rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
         crouching = true;
     }
 
     public void StopDigging()
     {
-        transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+        animator.SetBool("Digging", false);
+        //transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
 
         crouching = false;
     }
@@ -371,6 +375,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Jump()
     {
+        animator.SetTrigger("Jump");
         exitingSlope = true;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
