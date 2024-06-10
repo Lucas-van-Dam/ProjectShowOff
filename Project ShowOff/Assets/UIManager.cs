@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     int fragments;
     public int keyTier;
 
+    [SerializeField]
+    GameObject[] characterButtons;
+
     private void Awake()
     {
         if (instance == null)
@@ -49,5 +52,15 @@ public class UIManager : MonoBehaviour
     {
         fragments++;
         FragmentCollected?.Invoke(fragments);
+    }
+
+    public void changeCharacter(int character)
+    {
+        for(int i = 0; i < characterButtons.Length; i++) 
+        {
+            characterButtons[i].SetActive(false);
+        }
+
+        characterButtons[character].SetActive(true);
     }
 }
