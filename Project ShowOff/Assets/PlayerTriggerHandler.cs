@@ -27,11 +27,15 @@ public class PlayerTriggerHandler : MonoBehaviour
 
         if(other.tag == "Locked")
         {
-            if(other.GetComponent<LockScript>() != null)
+
+            LockScript lockScript = other.GetComponent<LockScript>();
+
+            if (lockScript != null)
             {
-                if(UIManager.instance.keyTier >= other.GetComponent<LockScript>().tier)
+                if(UIManager.instance.keyTier >= lockScript.tier)
                 {
-                    Destroy(other.gameObject);
+                    //Destroy(other.gameObject);
+                    lockScript.Unlock();
                 }
             }
         }

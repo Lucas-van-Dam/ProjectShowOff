@@ -11,6 +11,9 @@ public class LockScript : MonoBehaviour
     [SerializeField]
     public int tier;
 
+    GameObject child;
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +25,13 @@ public class LockScript : MonoBehaviour
         {
             Debug.LogError("lock tier not in valid range!");
         }
+
+        child = transform.GetChild(0).gameObject;
+        animator = child.GetComponent<Animator>();
+    }
+
+    public void Unlock()
+    {
+        animator.SetTrigger("OpenDoor");
     }
 }
