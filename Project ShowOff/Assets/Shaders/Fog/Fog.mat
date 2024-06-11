@@ -38,8 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cutoff: -0.73
-    - _FinalMultiply: 0.85
+    - _Cutoff: -0.52
+    - _FinalMultiply: 0.86
     - _ScrollSpeed: 0.2
     m_Colors: []
   m_BuildTextureStacks: []
