@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 598889170536735118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GAte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,21 +110,41 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6416670821046617243, guid: 47691a477a5481f45971551c1c413bf7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -4844485673732472032, guid: 47691a477a5481f45971551c1c413bf7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
+    - target: {fileID: -2310930058153184721, guid: 47691a477a5481f45971551c1c413bf7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 47691a477a5481f45971551c1c413bf7,
         type: 3}
       propertyPath: m_Name
       value: CM_gate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47691a477a5481f45971551c1c413bf7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4871246643512765100, guid: 47691a477a5481f45971551c1c413bf7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
+    - target: {fileID: 8403301326727837939, guid: 47691a477a5481f45971551c1c413bf7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9111766095251395791, guid: 47691a477a5481f45971551c1c413bf7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

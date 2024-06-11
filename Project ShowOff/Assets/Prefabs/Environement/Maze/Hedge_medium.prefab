@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8329871652977965201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hedge_medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,8 +117,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b606ddc0052f5724b8869df17b6447bd,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b606ddc0052f5724b8869df17b6447bd,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574726782646386610, guid: b606ddc0052f5724b8869df17b6447bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7574726782646386610, guid: b606ddc0052f5724b8869df17b6447bd,
         type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8081506427228197985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RexTemple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,10 +90,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4894310715400855719, guid: 3609a7fdefdcf344fbadc6125c54884c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3609a7fdefdcf344fbadc6125c54884c,
         type: 3}
       propertyPath: m_Name
       value: CM rex temple
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3609a7fdefdcf344fbadc6125c54884c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2480945029559958682, guid: 3609a7fdefdcf344fbadc6125c54884c,
         type: 3}
