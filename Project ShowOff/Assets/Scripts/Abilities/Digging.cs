@@ -7,10 +7,13 @@ public class Digging : MonoBehaviour
 {
     [Header("References")] 
     private PlayerMovementAdvanced pm;
+
+    private Collider col;
     // Start is called before the first frame update
     void Start()
     {
         pm = GetComponentInParent<PlayerMovementAdvanced>();
+        col = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -21,10 +24,12 @@ public class Digging : MonoBehaviour
             if (pm.crouching)
             {
                 pm.StopDigging();
+                
             }
             else
             {
                 pm.StartDigging();
+                
             }
         }
     }

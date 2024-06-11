@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
 
 public class UIManager : MonoBehaviour
@@ -16,6 +18,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     GameObject[] characterButtons;
+
+    public Image promtImage;
 
     private void Awake()
     {
