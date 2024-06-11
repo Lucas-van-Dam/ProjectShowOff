@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7317182590080695493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +90,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4225743433711433793, guid: 037b97cef2635cf4a8f1856e3fdefa77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -830261323333770066, guid: 037b97cef2635cf4a8f1856e3fdefa77,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -100,11 +105,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM_hub
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 037b97cef2635cf4a8f1856e3fdefa77,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -4225743433711433793, guid: 037b97cef2635cf4a8f1856e3fdefa77,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8548428549513569236}
   m_SourcePrefab: {fileID: 100100000, guid: 037b97cef2635cf4a8f1856e3fdefa77, type: 3}
+--- !u!1 &3546161636767450793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4225743433711433793, guid: 037b97cef2635cf4a8f1856e3fdefa77,
+    type: 3}
+  m_PrefabInstance: {fileID: 8389462303524028694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8548428549513569236
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3546161636767450793}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3102785436776302346, guid: 037b97cef2635cf4a8f1856e3fdefa77, type: 3}
 --- !u!4 &8351893595013900029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 037b97cef2635cf4a8f1856e3fdefa77,

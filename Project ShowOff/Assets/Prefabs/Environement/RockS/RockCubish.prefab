@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6064946100733741648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockCubish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6064946100733741648
 Transform:
@@ -100,10 +100,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM_rock_cubish
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72a1345b5d72fc94c83cf69ed32f767f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72a1345b5d72fc94c83cf69ed32f767f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769753325518620236, guid: 72a1345b5d72fc94c83cf69ed32f767f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769753325518620236, guid: 72a1345b5d72fc94c83cf69ed32f767f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1769753325518620236, guid: 72a1345b5d72fc94c83cf69ed32f767f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6639473875956318310}
   m_SourcePrefab: {fileID: 100100000, guid: 72a1345b5d72fc94c83cf69ed32f767f, type: 3}
 --- !u!4 &3202177777059294246 stripped
 Transform:
@@ -111,3 +135,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3169077033841560525}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3708080426571730305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1769753325518620236, guid: 72a1345b5d72fc94c83cf69ed32f767f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3169077033841560525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6639473875956318310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708080426571730305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.438385, y: 2.7664351, z: 4.5861244}
+  m_Center: {x: -9.783493, y: 3.3460648, z: -18.224016}

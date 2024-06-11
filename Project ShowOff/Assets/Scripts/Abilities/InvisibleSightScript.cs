@@ -6,6 +6,11 @@ public class InvisibleSightScript : MonoBehaviour
 {
 
     [SerializeField] InvisiblePlatformManager invisibleParent;
+    [SerializeField] Material fogOverlay;
+
+    float target;
+    float transparancy;
+    [SerializeField] float transitionSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +19,15 @@ public class InvisibleSightScript : MonoBehaviour
         {
             invisibleParent = InvisiblePlatformManager.Instance;
         }
+        if(fogOverlay == null)
+        {
+            Debug.LogError("no reference to fogoverlay for rex!");
+        }
+
+        fogOverlay.EnableKeyword("_Transparancy");
+        fogOverlay.SetFloat("_Transparancy", 0f);
+
+
     }
 
     // Update is called once per frame
@@ -21,17 +35,24 @@ public class InvisibleSightScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
-            invisibleParent.TogglePlatforms();
+            target = invisibleParent.TogglePlatforms();
         }
+
+        transparancy = Mathf.Lerp(transparancy, target, transitionSpeed);
+
+
+        fogOverlay.SetFloat("_Transparancy", transparancy);
     }
 
     private void OnDisable()
     {
         invisibleParent.DisablePlatforms();
+        fogOverlay.SetFloat("_Transparancy", 0);
     }
 
     private void OnDestroy()
     {
         invisibleParent.DisablePlatforms();
+        fogOverlay.SetFloat("_Transparancy", 0);
     }
 }

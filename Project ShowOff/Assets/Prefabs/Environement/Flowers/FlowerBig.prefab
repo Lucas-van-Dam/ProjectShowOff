@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3156761157870937375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FlowerBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3156761157870937375
 Transform:
@@ -90,10 +90,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6263023208769871650, guid: 8bbb724fa6b13b24abf202e69c959766,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6263023208769871650, guid: 8bbb724fa6b13b24abf202e69c959766,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bbb724fa6b13b24abf202e69c959766,
         type: 3}
       propertyPath: m_Name
       value: CM_flower_big
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8bbb724fa6b13b24abf202e69c959766,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8bbb724fa6b13b24abf202e69c959766,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2001355524504057347, guid: 8bbb724fa6b13b24abf202e69c959766,
         type: 3}
@@ -103,8 +123,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6263023208769871650, guid: 8bbb724fa6b13b24abf202e69c959766,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2381479984509754907}
   m_SourcePrefab: {fileID: 100100000, guid: 8bbb724fa6b13b24abf202e69c959766, type: 3}
+--- !u!1 &4778386411463047698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6263023208769871650, guid: 8bbb724fa6b13b24abf202e69c959766,
+    type: 3}
+  m_PrefabInstance: {fileID: 7729716881832041164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2381479984509754907
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778386411463047698}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3539760043503215100, guid: 8bbb724fa6b13b24abf202e69c959766, type: 3}
 --- !u!4 &7840698719879904551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bbb724fa6b13b24abf202e69c959766,

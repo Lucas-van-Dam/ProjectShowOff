@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4737006543005339233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DaisySmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4737006543005339233
 Transform:
@@ -100,11 +100,63 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM_daisy_small
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110377584783486247, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110377584783486247, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8110377584783486247, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4993763064262320723}
   m_SourcePrefab: {fileID: 100100000, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6, type: 3}
+--- !u!1 &3958451541221276191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8110377584783486247, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5071870965283559224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4993763064262320723
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958451541221276191}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2900316476968172577, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6, type: 3}
 --- !u!4 &4749149951947534547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cb1cf421fb37ed4b9e7e66c0b4fdab6,

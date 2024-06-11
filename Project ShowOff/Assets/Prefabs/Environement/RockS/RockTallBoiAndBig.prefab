@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318448218353557762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockTallBoiAndBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1318448218353557762
 Transform:
@@ -90,6 +90,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2564803381858342539, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2564803381858342539, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 217368768283554325, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -100,10 +110,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM_rock_tall_boi_and_big
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2564803381858342539, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6454028438833059586}
   m_SourcePrefab: {fileID: 100100000, guid: 673e8a9d9e5067c4ba3aec17f7b41418, type: 3}
 --- !u!4 &21528916118415501 stripped
 Transform:
@@ -111,3 +135,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 560351885209259878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6602622282567427603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2564803381858342539, guid: 673e8a9d9e5067c4ba3aec17f7b41418,
+    type: 3}
+  m_PrefabInstance: {fileID: 560351885209259878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6454028438833059586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602622282567427603}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.9752197, y: 7.1383076, z: 3.3457184}
+  m_Center: {x: -29.809021, y: 4.893365, z: -17.65472}

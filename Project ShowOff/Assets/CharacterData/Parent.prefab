@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f75301d2cbece44ca0eba4262a35c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glideKey: 48
-  glideHopUpForce: 14
+  glideKey: 333
+  glideHopUpForce: 2
   glideHopForwardForce: 6
 --- !u!95 &8004655526306541980
 Animator:
