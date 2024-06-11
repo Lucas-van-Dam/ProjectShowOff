@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8461481138219269076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockTinyPotato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8461481138219269076
 Transform:
@@ -90,6 +90,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7646093733289704701, guid: 668d580f92df5324ab0ecc05c4ad00e2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7646093733289704701, guid: 668d580f92df5324ab0ecc05c4ad00e2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -3568033590702888164, guid: 668d580f92df5324ab0ecc05c4ad00e2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -100,11 +110,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM_rock_tiny_potato
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 668d580f92df5324ab0ecc05c4ad00e2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 668d580f92df5324ab0ecc05c4ad00e2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -7646093733289704701, guid: 668d580f92df5324ab0ecc05c4ad00e2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3913811259075639531}
   m_SourcePrefab: {fileID: 100100000, guid: 668d580f92df5324ab0ecc05c4ad00e2, type: 3}
+--- !u!1 &5198138492987793018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7646093733289704701, guid: 668d580f92df5324ab0ecc05c4ad00e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6755647010423905657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3913811259075639531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198138492987793018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.612671, y: 1.7774143, z: 2.076992}
+  m_Center: {x: 3.6014404, y: 2.852398, z: -17.541487}
 --- !u!4 &6506109732753930898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 668d580f92df5324ab0ecc05c4ad00e2,

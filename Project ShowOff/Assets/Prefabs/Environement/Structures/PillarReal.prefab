@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1365629713062914961
 Transform:
@@ -90,10 +90,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4896941798407200705, guid: 1e0a73bbff4482d4d994355daca55420,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1e0a73bbff4482d4d994355daca55420,
         type: 3}
       propertyPath: m_Name
       value: CM pillar real
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e0a73bbff4482d4d994355daca55420,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 926411105356055340, guid: 1e0a73bbff4482d4d994355daca55420,
         type: 3}
@@ -103,7 +113,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -4896941798407200705, guid: 1e0a73bbff4482d4d994355daca55420,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3299528665559137962}
   m_SourcePrefab: {fileID: 100100000, guid: 1e0a73bbff4482d4d994355daca55420, type: 3}
 --- !u!4 &1491776412704175494 stripped
 Transform:
@@ -111,3 +125,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1385248050187113069}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3401328921211941458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4896941798407200705, guid: 1e0a73bbff4482d4d994355daca55420,
+    type: 3}
+  m_PrefabInstance: {fileID: 1385248050187113069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3299528665559137962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401328921211941458}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.769496, y: 4.633103, z: 0.769496}
+  m_Center: {x: 0, y: 2.3165514, z: 0}
