@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glideKey: 333
-  glideHopUpForce: 14
+  glideHopUpForce: 2
   glideHopForwardForce: 6
 --- !u!95 &8004655526306541980
 Animator:

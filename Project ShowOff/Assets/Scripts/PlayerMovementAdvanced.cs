@@ -53,6 +53,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     [Header("References")] 
     [HideInInspector] public Animator animator;
     public Transform orientation;
+    private CapsuleCollider col;
 
     float horizontalInput;
     float verticalInput;
@@ -88,6 +89,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
         rb.freezeRotation = true;
 
         readyToJump = true;
@@ -185,7 +187,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         animator.SetBool("Digging", true);
         //transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
         //rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-
+        col.height = 0.2f;
         crouching = true;
     }
 
@@ -193,7 +195,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         animator.SetBool("Digging", false);
         //transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-
+        col.height = 2f;
         crouching = false;
     }
 
