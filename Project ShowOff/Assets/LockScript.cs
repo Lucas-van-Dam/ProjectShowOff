@@ -23,7 +23,7 @@ public class LockScript : MonoBehaviour
     {
         if(tier >= 0 && tier < tierMeshes.Length)
         {
-            GetComponent<MeshFilter>().mesh = tierMeshes[tier];
+            GetComponent<MeshFilter>().mesh = tierMeshes[tier - 1];
         }
         else
         {

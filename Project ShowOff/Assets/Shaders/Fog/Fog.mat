@@ -13,7 +13,9 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - Transparancy
+  - _Transparancy
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -38,8 +40,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cutoff: -0.52
-    - _FinalMultiply: 0.86
+    - _Cutoff: -0.01
+    - _FinalMultiply: 0.42
     - _ScrollSpeed: 0.2
+    - _ShadowCornerStrength: 0.008
+    - _Transparancy: 1.7e-44
     m_Colors: []
   m_BuildTextureStacks: []
