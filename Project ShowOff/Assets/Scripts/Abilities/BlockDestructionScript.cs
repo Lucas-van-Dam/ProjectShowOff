@@ -6,8 +6,10 @@ using UnityEngine.Serialization;
 
 public class BlockDestructionScript : MonoBehaviour
 {
+    [FormerlySerializedAs("collider")] [SerializeField]
+    Collider selfCollider;
 
-    [FormerlySerializedAs("collider")] [SerializeField] Collider selfCollider;
+    [Header("References")] private PlayerMovementAdvanced pm;
 
     void Start()
     {
@@ -15,23 +17,16 @@ public class BlockDestructionScript : MonoBehaviour
         {
             selfCollider = GetComponent<Collider>();
         }
+
+        pm = GetComponentInParent<PlayerMovementAdvanced>();
     }
 
     void Update()
     {
-        
-
-        //RaycastHit hit;
-
-        //if (collider.)
-
-        //if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
-        //{
-        //    if(hit.collider.tag == "Destructible")
-        //    {
-        //        hit.collider.gameObject.SetActive(false);
-        //    }
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Joystick1Button3))
+        {
+            pm.animator.SetTrigger("Chomp");
+        }
     }
 
 
@@ -41,6 +36,7 @@ public class BlockDestructionScript : MonoBehaviour
         {
             if (other.tag == "Destructible")
             {
+                pm.animator.SetTrigger("Chomp");
                 other.GetComponent<DestructibleBlock>().DestroyThis();
             }
         }

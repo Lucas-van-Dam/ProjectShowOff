@@ -123,6 +123,7 @@ public class PlayerSwitching : MonoBehaviour
             Destroy(graphicsHolder.transform.GetChild(i).gameObject);
         }
 
-        Instantiate(data.CharacterModel, transform.position + Vector3.down, graphicsHolder.transform.rotation, graphicsHolder.transform);
+        var graphics = Instantiate(data.CharacterModel, transform.position + Vector3.down, graphicsHolder.transform.rotation, graphicsHolder.transform);
+        movement.animator = graphics.GetComponent<Animator>();
     }
 }
