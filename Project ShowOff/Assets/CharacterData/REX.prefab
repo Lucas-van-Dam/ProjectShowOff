@@ -35239,6 +35239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invisibleParent: {fileID: 0}
+  fogOverlay: {fileID: 2100000, guid: 6a2322457b54756408eee57ddba76237, type: 2}
+  transitionSpeed: 0.04
 --- !u!95 &2955683102934789269
 Animator:
   serializedVersion: 5

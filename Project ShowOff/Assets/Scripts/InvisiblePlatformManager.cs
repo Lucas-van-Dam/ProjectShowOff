@@ -39,7 +39,7 @@ public class InvisiblePlatformManager : MonoBehaviour
         }
     }
 
-    public void TogglePlatforms()
+    public int TogglePlatforms()
     {
 
         visible = !visible;
@@ -48,6 +48,13 @@ public class InvisiblePlatformManager : MonoBehaviour
         {
             children[i].enabled = visible;
         }
+
+        if (visible)
+        {
+            return 1;
+        }
+
+        return 0;
     }
 
     public void DisablePlatforms()
