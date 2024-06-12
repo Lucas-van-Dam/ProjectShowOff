@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject[] characterButtons;
 
+    public Image promtImage;
+
     [SerializeField]
     public Image characterSwitcher;
     [SerializeField]
