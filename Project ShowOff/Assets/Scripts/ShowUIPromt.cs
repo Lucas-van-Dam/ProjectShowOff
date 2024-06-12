@@ -19,18 +19,18 @@ public class ShowUIPromt : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-        UIManager.instance.promtImage.sprite = promtImage;
-        UIManager.instance.promtImage.gameObject.SetActive(true);
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (!other.CompareTag("Player"))
+    //        return;
+    //    UIManager.instance.promtImage.sprite = promtImage;
+    //    UIManager.instance.promtImage.gameObject.SetActive(true);
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-        UIManager.instance.promtImage.gameObject.SetActive(false);
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (!other.CompareTag("Player"))
+    //        return;
+    //    UIManager.instance.promtImage.gameObject.SetActive(false);
+    //}
 }
