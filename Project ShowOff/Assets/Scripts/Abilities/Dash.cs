@@ -67,8 +67,13 @@ public class Dash : MonoBehaviour
 
     IEnumerator StopDash()
     {
-        yield return new WaitForSeconds(0.1f);
-        yield return new WaitUntil(() => pm.grounded);
+
+        int counter = 0;
+        while (counter <= 50 && !pm.grounded)
+        {
+            yield return new WaitForSeconds(0.01f);
+            counter++;
+        }
         Debug.Log("Stopped Dashing");
         pm.dashing = false;
     }
