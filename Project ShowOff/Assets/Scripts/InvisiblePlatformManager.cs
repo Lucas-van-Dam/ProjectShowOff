@@ -31,11 +31,17 @@ public class InvisiblePlatformManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        children = new MeshRenderer[transform.childCount];
-        for (int i = 0; i < children.Length; i++)
+        //children = new MeshRenderer[transform.childCount];
+        //for (int i = 0; i < children.Length; i++)
+        //{
+        //    children[i] = transform.GetChild(i).GetComponent<MeshRenderer>();
+        //    children[i].enabled = false;
+        //}
+
+        children = transform.GetComponentsInChildren<MeshRenderer>();
+        foreach (var item in children)
         {
-            children[i] = transform.GetChild(i).GetComponent<MeshRenderer>();
-            children[i].enabled = false;
+            item.enabled = false;
         }
     }
 
