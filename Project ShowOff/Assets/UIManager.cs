@@ -21,6 +21,13 @@ public class UIManager : MonoBehaviour
 
     public Image promtImage;
 
+    [SerializeField]
+    public Image characterSwitcher;
+    [SerializeField]
+    public Image characterSwitchingSpriteSlot;
+    [SerializeField]
+    public Sprite[] CharacterSwitchingSprite;
+
     private void Awake()
     {
         if (instance == null)
@@ -66,5 +73,12 @@ public class UIManager : MonoBehaviour
         }
 
         characterButtons[character].SetActive(true);
+    }
+
+    public void ToggleCharacterSwitching(int character, bool toggle)
+    {
+        characterSwitcher.gameObject.SetActive(toggle);
+
+        characterSwitchingSpriteSlot.sprite = CharacterSwitchingSprite[character];
     }
 }

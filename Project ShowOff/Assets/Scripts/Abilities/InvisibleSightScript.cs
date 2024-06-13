@@ -18,7 +18,7 @@ public class InvisibleSightScript : MonoBehaviour
         if (invisibleParent == null)
         {
             //invisibleParent = InvisiblePlatformManager.Instance;
-            //Debug.LogError("no reference to ínvisible platform manager!");
+            //Debug.LogError("no reference to ï¿½nvisible platform manager!");
             invisibleParent = FindObjectOfType<InvisiblePlatformManager>();
         }
         if(fogOverlay == null)
