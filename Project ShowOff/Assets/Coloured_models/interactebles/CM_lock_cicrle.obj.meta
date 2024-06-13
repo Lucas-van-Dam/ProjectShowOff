@@ -3,7 +3,17 @@ guid: c4f084df03ea0284a8c76957862cdb56
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CM_lock_circleMat
+    second: {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textureEditorIsolateSelectSet_CM_lock_circleMat
+    second: {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
