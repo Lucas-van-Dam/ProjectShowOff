@@ -48,7 +48,7 @@ public class SpawnPlatform : MonoBehaviour
 
                 if (Physics.Raycast(Camera.main.transform.position + Camera.main.transform.forward * distance, Vector3.down, out hit2, distance, layerMask))
                 {
-                    spawnPosition = hit2.point + Vector3.up * yOffset;
+                    spawnPosition = new Vector3(hit2.point.x, transform.position.y + yOffset, hit2.point.z);
                 }
                     //spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distance;
             }
