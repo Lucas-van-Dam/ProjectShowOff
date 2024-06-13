@@ -3,7 +3,12 @@ guid: 8919d5336c335384b9745490d48f3cc5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CM_lock_lineMat
+    second: {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

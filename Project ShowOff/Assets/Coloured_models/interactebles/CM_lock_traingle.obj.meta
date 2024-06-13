@@ -3,7 +3,12 @@ guid: 8a60626d8d0fc7b478d0c4b9393e50f5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CM_lock_triangleMat
+    second: {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
