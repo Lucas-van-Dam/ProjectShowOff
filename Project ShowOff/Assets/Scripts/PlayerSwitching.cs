@@ -91,18 +91,22 @@ public class PlayerSwitching : MonoBehaviour
         {
             case Characters.VF:
                 SetVariables(VFData);
+                UIManager.instance.changeCharacter(0);
                 break;
 
             case Characters.Cutizylo:
                 SetVariables(CutizyloData);
+                UIManager.instance.changeCharacter(1);
                 break;
 
             case Characters.Rex:
                 SetVariables(RexData);
+                UIManager.instance.changeCharacter(2);
                 break;
 
             case Characters.Grecky:
                 SetVariables(GreckyData);
+                UIManager.instance.changeCharacter(3);
                 break;
 
             default:

@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
     int fragments;
     public int keyTier;
+    int currentPlayer;
 
     [SerializeField]
     GameObject[] characterButtons;
@@ -72,6 +73,7 @@ public class UIManager : MonoBehaviour
             characterButtons[i].SetActive(false);
         }
 
+        //Debug.Log(character);
         characterButtons[character].SetActive(true);
     }
 
