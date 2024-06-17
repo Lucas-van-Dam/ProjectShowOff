@@ -268,7 +268,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 3.719223
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 1138771704565890549}
   - component: {fileID: 2266948346235660436}
   - component: {fileID: 8606444772012647717}
+  - component: {fileID: 1606923834873879931}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -417,6 +418,7 @@ MonoBehaviour:
   grounded: 0
   maxSlopeAngle: 40
   onslope: 0
+  animator: {fileID: 0}
   orientation: {fileID: 4926785233508423039}
   state: 0
   sliding: 0
@@ -466,6 +468,20 @@ MonoBehaviour:
   movement: {fileID: 1138771704565890549}
   VFData: {fileID: 11400000, guid: 9d50c9b0d9705c34a995a160e58780c1, type: 2}
   CutizyloData: {fileID: 11400000, guid: 31053e948ebaf7e4f896cfec9801b0cc, type: 2}
+  RexData: {fileID: 11400000, guid: 9ec6fb8d6c7e8314197333fe7ba25cc4, type: 2}
+  GreckyData: {fileID: 11400000, guid: 84afafeea5fd1f841930ba803946cd32, type: 2}
+--- !u!114 &1606923834873879931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255813402609485462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a9ee805c902814088387436caafcb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1268356899822698130
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,8 +511,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268356899822698130}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11553167, y: -0.032151114, z: 0.0037414993, w: 0.9927763}
-  m_LocalPosition: {x: 0.42834494, y: 1.2599993, z: -6.6061454}
+  m_LocalRotation: {x: 0.11559234, y: 0.00008002668, z: -0.000009312992, w: 0.99329674}
+  m_LocalPosition: {x: -0.025697917, y: 1.2599993, z: -6.620814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -580,9 +596,6 @@ MonoBehaviour:
   rotationSpeed: 6
   combatLookAt: {fileID: 0}
   thirdPersonCam: {fileID: 2467320466954838547}
-  combatCam: {fileID: 0}
-  topDownCam: {fileID: 0}
-  currentStyle: 0
 --- !u!114 &1105021193927497832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 1
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -912,7 +925,7 @@ Transform:
   m_GameObject: {fileID: 2467320466954838547}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 78.43997, y: -8.175388, z: 35.607117}
+  m_LocalPosition: {x: 77.98593, y: -8.175388, z: 35.621857}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -939,8 +952,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 163754822547811412}
-  m_Follow: {fileID: 163754822547811412}
+  m_LookAt: {fileID: 5608201625628339448}
+  m_Follow: {fileID: 5608201625628339448}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 50
@@ -985,7 +998,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 3.719223
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1007,8 +1020,8 @@ MonoBehaviour:
     m_VelocityFilterStrength: 4
     m_Bias: 0
   m_RecenterToTargetHeading:
-    m_enabled: 0
-    m_WaitTime: 1
+    m_enabled: 1
+    m_WaitTime: 0.16
     m_RecenteringTime: 2
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
@@ -1040,21 +1053,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CollideAgainst:
     serializedVersion: 2
-    m_Bits: 1537
+    m_Bits: 1601
   m_IgnoreTag: Player
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
   m_MinimumDistanceFromTarget: 0.1
-  m_AvoidObstacles: 0
+  m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
   m_CameraRadius: 0.1
   m_Strategy: 0
   m_MaximumEffort: 4
-  m_SmoothingTime: 0
-  m_Damping: 0
-  m_DampingWhenOccluded: 0
+  m_SmoothingTime: 0.102
+  m_Damping: 1.37
+  m_DampingWhenOccluded: 0.51
   m_OptimalTargetDistance: 0
 --- !u!1 &2483491873129825951
 GameObject:
@@ -1113,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2498926165712349401}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11559224, y: -0, z: -0, w: 0.99329674}
+  m_LocalRotation: {x: 0.11553146, y: 0.03223104, z: -0.0037508036, w: 0.9927737}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1421,7 +1434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3812230275216507551}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13870122, y: -0, z: -0, w: 0.9903343}
+  m_LocalRotation: {x: 0.13862836, y: 0.032134935, z: -0.0045006615, w: 0.9898128}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1899,7 +1912,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 3.719223
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -2002,14 +2015,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6642257452877067713}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1480146626007717609}
   m_Father: {fileID: 5608201625628339448}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &6722850423781973916
 GameObject:
   m_ObjectHideFlags: 3
@@ -2035,7 +2048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6722850423781973916}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252108, y: -0, z: -0, w: 0.99571073}
+  m_LocalRotation: {x: 0.09247229, y: 0.032309394, z: -0.003002175, w: 0.9951864}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2462,7 +2475,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: 3.719223
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
