@@ -46,6 +46,12 @@ public class InvisiblePlatformManager : MonoBehaviour
             children.Add(GetComponentInChildren<MeshRenderer>(AllChildren[i]));
         }
 
+        foreach(MeshRenderer child in children)
+        {
+            child.enabled = false;
+        }
+        
+
         //List<Transform> OnesThatIWant = new List<Transform>();
 
         //foreach (var child in AllChildren)

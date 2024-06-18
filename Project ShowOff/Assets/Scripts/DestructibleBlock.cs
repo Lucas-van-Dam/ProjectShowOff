@@ -8,6 +8,7 @@ public class DestructibleBlock : MonoBehaviour
 
     [SerializeField] ParticleSystem ParticleSystem;
     [FormerlySerializedAs("collider")] [SerializeField] Collider selfCollider;
+    [FormerlySerializedAs("collider")][SerializeField] Collider selfCollider2;
     [SerializeField] MeshRenderer mR;
 
     Vector3 startScale;
@@ -52,6 +53,7 @@ public class DestructibleBlock : MonoBehaviour
         deathTimer = Time.time + ParticleSystem.main.duration;
 
         Destroy(selfCollider);
+        Destroy(selfCollider2);
         Destroy(mR);
     }
 
