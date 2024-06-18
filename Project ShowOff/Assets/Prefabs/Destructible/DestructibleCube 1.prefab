@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleSystem: {fileID: 2607836105808805714}
   selfCollider: {fileID: 7800007388198803061}
+  selfCollider2: {fileID: 9109485972995717036}
   mR: {fileID: 4300669636551898299}
   wobbleIntensity: 0.1
   wobbleSpeed: 5
