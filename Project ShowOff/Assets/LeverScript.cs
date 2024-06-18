@@ -19,6 +19,8 @@ public class LeverScript : MonoBehaviour
     Animator animator;
     PlatformMover PlatformMover;
 
+    bool playerInRange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,21 +37,35 @@ public class LeverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(playerInRange)
+        {
+            if (Input.GetKeyDown(UIManager.instance.interactionKey))
+            {
+                if (triggerType == triggerType.Door)
+                {
+                    animator.SetTrigger("OpenDoor");
+                }
+                if (triggerType == triggerType.Platform)
+                {
+                    PlatformMover.TogglePlatform();
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            if(triggerType == triggerType.Door)
-            {
-                animator.SetTrigger("OpenDoor");
-            }
-            if(triggerType == triggerType.Platform)
-            {
-                PlatformMover.TogglePlatform();
-            }
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            playerInRange = false;
         }
     }
 }

@@ -29,6 +29,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     public Sprite[] CharacterSwitchingSprite;
 
+    [Header("Input")]
+    [SerializeField] public KeyCode interactionKey = KeyCode.KeypadPeriod;
+
     private void Awake()
     {
         if (instance == null)
