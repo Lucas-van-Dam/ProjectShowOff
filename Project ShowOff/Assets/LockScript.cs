@@ -7,6 +7,8 @@ public class LockScript : MonoBehaviour
 
     [SerializeField]
     Mesh[] tierMeshes;
+    [SerializeField]
+    Material material;
 
     [SerializeField]
     public int tier;
@@ -24,6 +26,7 @@ public class LockScript : MonoBehaviour
         if(tier >= 0 && tier < tierMeshes.Length)
         {
             GetComponent<MeshFilter>().mesh = tierMeshes[tier - 1];
+            GetComponent<MeshRenderer>().material = material;
         }
         else
         {
