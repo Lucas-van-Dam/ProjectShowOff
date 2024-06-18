@@ -19,6 +19,7 @@ public class LockScript : MonoBehaviour
     Rigidbody rb;
 
     bool locked = true;
+    bool playerInRange;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,33 @@ public class LockScript : MonoBehaviour
             }
 
             transform.localScale = new Vector3 (scale, scale, scale);
+        }
+        else
+        {
+            if (Input.GetKeyDown(UIManager.instance.interactionKey))
+            {
+                if (UIManager.instance.keyTier >= tier)
+                {
+                    Unlock();
+                }
+            }
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            playerInRange = false;
         }
     }
 }
