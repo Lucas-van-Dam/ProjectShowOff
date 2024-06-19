@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5558584141558506766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: -1617936280298753571, guid: bc31af58843b83d47835617fb9d8630c,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -1617936280298753571, guid: bc31af58843b83d47835617fb9d8630c,
         type: 3}
@@ -109,6 +109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: uv_mapped_cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc31af58843b83d47835617fb9d8630c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
