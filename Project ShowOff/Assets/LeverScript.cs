@@ -12,7 +12,7 @@ public class LeverScript : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject triggeredObject;
+    GameObject[] triggeredObject;
     [SerializeField]
     triggerType triggerType;
 
@@ -21,8 +21,8 @@ public class LeverScript : MonoBehaviour
 
     bool isOn = true;
 
-    Animator animator;
-    PlatformMover PlatformMover;
+    Animator[] animator;
+    PlatformMover[] PlatformMover;
 
     bool playerInRange;
 
@@ -31,11 +31,23 @@ public class LeverScript : MonoBehaviour
     {
         if (triggerType == triggerType.Door)
         {
-            animator = triggeredObject.GetComponent<Animator>();
+
+            animator = new Animator[triggeredObject.Length];
+
+            for(int i = 0; i < triggeredObject.Length; i++)
+            {
+                animator[i] = triggeredObject[i].GetComponent<Animator>();
+            }
         }
         if (triggerType == triggerType.Platform)
         {
-            PlatformMover = triggeredObject.GetComponent<PlatformMover>();
+
+            animator = new Animator[triggeredObject.Length];
+
+            for (int i = 0; i < triggeredObject.Length; i++)
+            {
+                PlatformMover[i] = triggeredObject[i].GetComponent<PlatformMover>();
+            }
         }
     }
 
@@ -48,11 +60,17 @@ public class LeverScript : MonoBehaviour
             {
                 if (triggerType == triggerType.Door)
                 {
-                    animator.SetTrigger("OpenDoor");
+                    for (int i = 0; i < triggeredObject.Length; i++)
+                    {
+                        animator[i].SetTrigger("OpenDoor");
+                    }
                 }
                 if (triggerType == triggerType.Platform)
                 {
-                    PlatformMover.TogglePlatform();
+                    for (int i = 0; i < triggeredObject.Length; i++)
+                    {
+                        PlatformMover[i].TogglePlatform();
+                    }
                 }
 
                 if(onlyOnce)
