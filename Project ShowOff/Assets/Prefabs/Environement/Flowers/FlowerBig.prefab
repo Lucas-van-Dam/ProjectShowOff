@@ -127,7 +127,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6263023208769871650, guid: 8bbb724fa6b13b24abf202e69c959766,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2381479984509754907}
+      addedObject: {fileID: 5358740606382856660}
+    - targetCorrespondingSourceObject: {fileID: -6263023208769871650, guid: 8bbb724fa6b13b24abf202e69c959766,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 993239600416866472}
   m_SourcePrefab: {fileID: 100100000, guid: 8bbb724fa6b13b24abf202e69c959766, type: 3}
 --- !u!1 &4778386411463047698 stripped
 GameObject:
@@ -135,8 +139,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7729716881832041164}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2381479984509754907
-MeshCollider:
+--- !u!65 &5358740606382856660
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,10 +157,30 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3539760043503215100, guid: 8bbb724fa6b13b24abf202e69c959766, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 7.56834, y: 0.8346672, z: 7.2364655}
+  m_Center: {x: 8.450229, y: 4.9254446, z: -4.21281}
+--- !u!65 &993239600416866472
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778386411463047698}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.260025, y: 5.386093, z: 1.6640673}
+  m_Center: {x: 8.554623, y: 2.6497316, z: -4.3727374}
 --- !u!4 &7840698719879904551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bbb724fa6b13b24abf202e69c959766,
