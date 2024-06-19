@@ -24,6 +24,7 @@ public class InvisiblePlatformManager : MonoBehaviour
     //}
 
     //MeshRenderer[] children;
+    [SerializeField]
     List<MeshRenderer> children = new List<MeshRenderer>();
     [SerializeField]
     bool visible;
@@ -39,12 +40,12 @@ public class InvisiblePlatformManager : MonoBehaviour
         //    children[i].enabled = false;
         //}
 
-        Transform[] AllChildren = GetComponentsInChildren<Transform>();
+        //Transform[] AllChildren = GetComponentsInChildren<Transform>();
 
-        for (int i = 0; i < AllChildren.Length; i++)
-        {
-            children.Add(GetComponentInChildren<MeshRenderer>(AllChildren[i]));
-        }
+        //for (int i = 0; i < AllChildren.Length; i++)
+        //{
+        //    children.Add(GetComponentInChildren<MeshRenderer>(AllChildren[i]));
+        //}
 
         foreach(MeshRenderer child in children)
         {

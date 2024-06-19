@@ -14,6 +14,8 @@ public class PlatformMover : MonoBehaviour
     Transform end;
     [SerializeField]
     bool triggered;
+    //[SerializeField]
+    //bool tr
 
     [SerializeField]
     float lerpAmount;
