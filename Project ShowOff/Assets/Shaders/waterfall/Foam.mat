@@ -43,9 +43,9 @@ Material:
     - _Erosion: 0.382
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RippleAmount: 3.8
+    - _RippleAmount: 6.79
     - _VertexOffsetAmount: 0.2
-    - _VoronaiScale: 20.57
+    - _VoronaiScale: 36.4
     - _VoronaiSpeed: 2
     m_Colors:
     - _RippleColor: {r: 1.2687784, g: 5.9741783, b: 6.792453, a: 1}
