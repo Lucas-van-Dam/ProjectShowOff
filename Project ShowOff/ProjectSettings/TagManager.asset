@@ -11,6 +11,7 @@ TagManager:
   - Meltable
   - Fragment
   - Locked
+  - Totem
   layers:
   - Default
   - TransparentFX
