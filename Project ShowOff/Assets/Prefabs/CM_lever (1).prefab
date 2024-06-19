@@ -216,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggeredObject: {fileID: 0}
   triggerType: 1
+  onlyOnce: 0
 --- !u!65 &6147758419030128813
 BoxCollider:
   m_ObjectHideFlags: 0
