@@ -25,19 +25,25 @@ public class PlayerTriggerHandler : MonoBehaviour
             UIManager.instance.FragmentCollectedEvent();
         }
 
-        //if(other.tag == "Locked")
-        //{
+        if (other.tag == "Totem")
+        {
+            Destroy(other.gameObject);
+            UIManager.instance.TotemCollected();
+        }
 
-        //    LockScript lockScript = other.GetComponent<LockScript>();
+        if(other.tag == "Locked")
+        {
 
-        //    if (lockScript != null)
-        //    {
-        //        if(UIManager.instance.keyTier >= lockScript.tier)
-        //        {
-        //            //Destroy(other.gameObject);
-        //            lockScript.Unlock();
-        //        }
-        //    }
-        //}
+            LockScript lockScript = other.GetComponent<LockScript>();
+
+            if (lockScript != null)
+            {
+                if(UIManager.instance.keyTier >= lockScript.tier)
+                {
+                    //Destroy(other.gameObject);
+                    lockScript.Unlock();
+                }
+            }
+        }
     }
 }

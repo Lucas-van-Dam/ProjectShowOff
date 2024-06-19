@@ -41,6 +41,11 @@ float GetSmoothnessPower(float rawSmoothness) {
     return exp2(10 * rawSmoothness + 1);
 }
 
+void ExtractMatrixElement(float4x4 matrixIn, float x, float y, out float value)
+{
+    value = matrixIn[x,y];
+}
+
 #ifndef SHADERGRAPH_PREVIEW
 float3 CustomGlobalIllumination(CustomLightingData d) {
     float3 indirectDiffuse = d.albedo * d.bakedGI * d.ambientOcclusion;
