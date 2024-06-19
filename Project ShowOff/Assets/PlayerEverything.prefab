@@ -1723,8 +1723,6 @@ GameObject:
   - component: {fileID: 4575999351119452233}
   - component: {fileID: 1877806274265021899}
   - component: {fileID: 5196781599195873998}
-  - component: {fileID: 5459129007889279742}
-  - component: {fileID: 1084248138609355762}
   - component: {fileID: 2336111620404548941}
   m_Layer: 0
   m_Name: Player
@@ -1866,30 +1864,6 @@ MonoBehaviour:
   CutizyloData: {fileID: 11400000, guid: 31053e948ebaf7e4f896cfec9801b0cc, type: 2}
   RexData: {fileID: 11400000, guid: 9ec6fb8d6c7e8314197333fe7ba25cc4, type: 2}
   GreckyData: {fileID: 11400000, guid: 84afafeea5fd1f841930ba803946cd32, type: 2}
---- !u!114 &5459129007889279742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489052652216085614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a9ee805c902814088387436caafcb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1084248138609355762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489052652216085614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a9ee805c902814088387436caafcb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2336111620404548941
 MonoBehaviour:
   m_ObjectHideFlags: 0

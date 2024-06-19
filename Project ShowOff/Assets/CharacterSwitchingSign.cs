@@ -21,7 +21,7 @@ public class CharacterSwitchingSign : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (Input.GetKey(KeyCode.Joystick1Button5) || Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.R))
             {
                 other.gameObject.GetComponent<PlayerSwitching>().SwitchCharacter(switchTo);
             }
