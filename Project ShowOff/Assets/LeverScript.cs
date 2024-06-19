@@ -16,6 +16,11 @@ public class LeverScript : MonoBehaviour
     [SerializeField]
     triggerType triggerType;
 
+    [SerializeField]
+    bool onlyOnce;
+
+    bool isOn = true;
+
     Animator animator;
     PlatformMover PlatformMover;
 
@@ -37,7 +42,7 @@ public class LeverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerInRange)
+        if(playerInRange && isOn)
         {
             if (Input.GetKeyDown(UIManager.instance.interactionKey))
             {
@@ -48,6 +53,11 @@ public class LeverScript : MonoBehaviour
                 if (triggerType == triggerType.Platform)
                 {
                     PlatformMover.TogglePlatform();
+                }
+
+                if(onlyOnce)
+                {
+                    isOn = false;
                 }
             }
         }

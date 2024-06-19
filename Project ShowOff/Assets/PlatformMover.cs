@@ -14,6 +14,8 @@ public class PlatformMover : MonoBehaviour
     Transform end;
     [SerializeField]
     bool triggered;
+    //[SerializeField]
+    //bool tr
 
     [SerializeField]
     float lerpAmount;
@@ -31,6 +33,8 @@ public class PlatformMover : MonoBehaviour
 
     bool dir;
     bool active;
+
+    bool initialtrigger = true;
 
     // Start is called before the first frame update
     void Start()
@@ -119,5 +123,16 @@ public class PlatformMover : MonoBehaviour
 
         if (dir) target = 0;
         else target = distance;
+
+        if (initialtrigger)
+        {
+            initialtrigger = false;
+
+            dir = !dir;
+            active = true;
+
+            if (dir) target = 0;
+            else target = distance;
+        }
     }
 }
