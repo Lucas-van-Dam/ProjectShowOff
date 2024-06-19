@@ -8,7 +8,7 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class UIManager : MonoBehaviour
 {
-
+    
     public static UIManager instance { get; private set; }
 
     public static event Action<int> FragmentCollected;
@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     int fragments;
     public int keyTier;
     int currentPlayer;
+
+    int Totems;
 
     [SerializeField]
     GameObject[] characterButtons;
@@ -28,6 +30,9 @@ public class UIManager : MonoBehaviour
     public Image characterSwitchingSpriteSlot;
     [SerializeField]
     public Sprite[] CharacterSwitchingSprite;
+
+    [SerializeField] private GameObject TotemsParent;
+    [SerializeField] private Sprite totemCollectedSprite;
 
     [Header("Input")]
     [SerializeField] public KeyCode interactionKey = KeyCode.KeypadPeriod;
@@ -67,6 +72,13 @@ public class UIManager : MonoBehaviour
     {
         fragments++;
         FragmentCollected?.Invoke(fragments);
+    }
+
+    public void TotemCollected()
+    {
+        Debug.Log("Totem Got");
+        TotemsParent.transform.GetChild(Totems).GetComponent<Image>().sprite = totemCollectedSprite;
+        Totems++;
     }
 
     public void changeCharacter(int character)
