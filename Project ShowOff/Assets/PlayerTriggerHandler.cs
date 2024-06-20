@@ -8,7 +8,7 @@ public class PlayerTriggerHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIManager.instance.respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -44,6 +44,19 @@ public class PlayerTriggerHandler : MonoBehaviour
                     lockScript.Unlock();
                 }
             }
+        }
+
+        if(other.tag == "RespawnPoint")
+        {
+            UIManager.instance.respawnPoint = other.transform.position;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "ResetPlayer")
+        {
+            transform.position = UIManager.instance.respawnPoint;
         }
     }
 }

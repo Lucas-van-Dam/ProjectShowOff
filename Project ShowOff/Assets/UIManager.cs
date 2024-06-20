@@ -37,6 +37,8 @@ public class UIManager : MonoBehaviour
     [Header("Input")]
     [SerializeField] public KeyCode interactionKey = KeyCode.KeypadPeriod;
 
+    public Vector3 respawnPoint;
+
     private void Awake()
     {
         if (instance == null)
