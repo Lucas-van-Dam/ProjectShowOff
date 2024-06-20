@@ -42,7 +42,7 @@ public class LeverScript : MonoBehaviour
         if (triggerType == triggerType.Platform)
         {
 
-            animator = new Animator[triggeredObject.Length];
+            PlatformMover = new PlatformMover[triggeredObject.Length];
 
             for (int i = 0; i < triggeredObject.Length; i++)
             {
