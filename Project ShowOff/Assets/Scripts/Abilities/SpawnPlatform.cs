@@ -22,6 +22,12 @@ public class SpawnPlatform : MonoBehaviour
     [SerializeField]
     float yOffset;
 
+    [SerializeField]
+    float jumpHeightAllowed;
+
+    [SerializeField]
+    LayerMask whatIsNotCloud;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,34 +42,47 @@ public class SpawnPlatform : MonoBehaviour
     {
         if (isSpawning)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance, layerMask))
+            if (Physics.Raycast(transform.position + Vector3.up * 0.2f, Vector3.down, out RaycastHit hitEmpty, jumpHeightAllowed, whatIsNotCloud))
             {
-                spawnPosition = hit.point + Vector3.up * yOffset;
-            }
-            else
-            {
-
-                RaycastHit hit2;
-
-                if (Physics.Raycast(Camera.main.transform.position + Camera.main.transform.forward * distance, Vector3.down, out hit2, distance, layerMask))
+                RaycastHit hit;
+                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance, layerMask))
                 {
-                    spawnPosition = new Vector3(hit2.point.x, transform.position.y + yOffset, hit2.point.z);
+                    spawnPosition = hit.point + Vector3.up * yOffset;
                 }
-                    //spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distance;
-            }
+                else
+                {
 
-            if (Input.GetKeyUp(KeyCode.Joystick1Button2) || Input.GetKeyUp(KeyCode.Alpha3))
-            {
-                spawnedObject.transform.position = spawnPosition;
-                spawnedObject.SetActive(true);
-                spawningGhost.SetActive(false);
-                isSpawning = false;
+                    RaycastHit hit2;
+
+                    if (Physics.Raycast(Camera.main.transform.position + Camera.main.transform.forward * distance, Vector3.down, out hit2, distance, layerMask))
+                    {
+                        spawnPosition = new Vector3(hit2.point.x, transform.position.y + yOffset, hit2.point.z);
+                    }
+                    //spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * distance;
+                }
+
+                if (Input.GetKeyUp(KeyCode.Joystick1Button2) || Input.GetKeyUp(KeyCode.Alpha3))
+                {
+                    spawnedObject.transform.position = spawnPosition;
+                    spawnedObject.SetActive(true);
+                    spawningGhost.SetActive(false);
+                    isSpawning = false;
+                }
+                else
+                {
+                    spawningGhost.transform.position = spawnPosition;
+                    spawningGhost.SetActive(true);
+                }
             }
+            //if the ground raycast fails we are not on the ground, cancel placing!
             else
             {
-                spawningGhost.transform.position = spawnPosition;
-                spawningGhost.SetActive(true);
+                spawningGhost.SetActive(false);
+                if (Input.GetKeyUp(KeyCode.Joystick1Button2) || Input.GetKeyUp(KeyCode.Alpha3))
+                {
+                    spawningGhost.SetActive(false);
+                    isSpawning = false;
+                }
             }
         }
         else

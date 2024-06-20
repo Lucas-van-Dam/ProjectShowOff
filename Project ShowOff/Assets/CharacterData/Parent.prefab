@@ -248,6 +248,10 @@ MonoBehaviour:
     type: 3}
   distance: 15
   yOffset: 2
+  jumpHeightAllowed: 1
+  whatIsNotCloud:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &-3552392393533200591
 MonoBehaviour:
   m_ObjectHideFlags: 0
