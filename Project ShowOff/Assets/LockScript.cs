@@ -24,7 +24,7 @@ public class LockScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(tier >= 0 && tier < tierMeshes.Length)
+        if(tier >= 1 && tier < tierMeshes.Length + 1)
         {
             GetComponent<MeshFilter>().mesh = tierMeshes[tier - 1];
             GetComponent<MeshRenderer>().material = material;
