@@ -12,6 +12,8 @@ TagManager:
   - Fragment
   - Locked
   - Totem
+  - RespawnPoint
+  - ResetPlayer
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - Ice
   - Pickup
   - Abilities
-  - 
+  - Cloud
   - 
   - 
   - 
