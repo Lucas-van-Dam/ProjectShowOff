@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1059834772888247197
 Transform:
@@ -94,6 +94,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CM_cave_vine_leaf_large
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7e227e264890614fa9df676d894ecd2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090162305495097873, guid: b7e227e264890614fa9df676d894ecd2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1939402107209402618, guid: b7e227e264890614fa9df676d894ecd2,
         type: 3}

@@ -44,11 +44,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1669376733811141697}
     m_Modifications:
-    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     - target: {fileID: 1318448218353557762, guid: baec205d5a32e4b4ba9c52d21dbd0d5a,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -114,6 +109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockTallBoiAndBig (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -133,11 +133,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1669376733811141697}
     m_Modifications:
-    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     - target: {fileID: 1318448218353557762, guid: baec205d5a32e4b4ba9c52d21dbd0d5a,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -203,6 +198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockTallBoiAndBig (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -222,11 +222,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1669376733811141697}
     m_Modifications:
-    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     - target: {fileID: 1318448218353557762, guid: baec205d5a32e4b4ba9c52d21dbd0d5a,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -292,6 +287,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockTallBoiAndBig (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -410,11 +410,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1669376733811141697}
     m_Modifications:
-    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     - target: {fileID: 1318448218353557762, guid: baec205d5a32e4b4ba9c52d21dbd0d5a,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -475,6 +470,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7388399375959024303, guid: 2459238d69a484c498d94f77ce26b3b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 020e168111bb0ba40a8d8c839e955b35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

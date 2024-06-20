@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5642123363485180456
 Transform:
@@ -110,6 +110,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4214192308295197418, guid: 0e6b848530f8898448584a7dd2754769,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -2567149328608892463, guid: 0e6b848530f8898448584a7dd2754769,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -119,6 +124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CM_vine4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e6b848530f8898448584a7dd2754769,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -154,8 +164,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1320662, y: 1.17741, z: 0.54945993}
-  m_Center: {x: 6.3166647, y: 0.59143597, z: 6.9767427}
+  m_Size: {x: 0.9796711, y: 1.17741, z: 0.481177}
+  m_Center: {x: 6.2832956, y: 0.59143597, z: 6.966164}
 --- !u!4 &7882731107523880337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e6b848530f8898448584a7dd2754769,
