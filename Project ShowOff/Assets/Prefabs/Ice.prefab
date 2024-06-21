@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5558584141558506766}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Ice
-  m_TagString: Untagged
+  m_TagString: Meltable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: -1617936280298753571, guid: bc31af58843b83d47835617fb9d8630c,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -1617936280298753571, guid: bc31af58843b83d47835617fb9d8630c,
         type: 3}
@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bc31af58843b83d47835617fb9d8630c,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
