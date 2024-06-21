@@ -84,39 +84,51 @@ public class WaterCastScript : MonoBehaviour
         splash = Instantiate(splash);
         
     }
-    
+
+    public void startCasting()
+    {
+        pm.animator.SetBool("Water", true);
+        isOn = true;
+    }
+
+    public void stopCasting()
+    {
+        pm.animator.SetBool("Water", false);
+        isOn = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
-        {
-            if (isOn)
-            {
-                pm.animator.SetBool("Water", false);
-                isOn = false;
-            }
-            else if(!fireScript.fireOn)
-            {
-                pm.animator.SetBool("Water", true);
-                isOn = true;
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+        //{
+        //    if (isOn)
+        //    {
+        //        pm.animator.SetBool("Water", false);
+        //        isOn = false;
+        //    }
+        //    else if(!fireScript.fireOn)
+        //    {
+        //        pm.animator.SetBool("Water", true);
+        //        isOn = true;
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (isOn)
-            {
-                pm.animator.SetBool("Water", false);
-                isOn = false;
-            }
-            else if(!fireScript.fireOn)
-            {
-                pm.animator.SetBool("Water", true);
-                isOn = true;
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    if (isOn)
+        //    {
+        //        pm.animator.SetBool("Water", false);
+        //        isOn = false;
+        //    }
+        //    else if(!fireScript.fireOn)
+        //    {
+        //        pm.animator.SetBool("Water", true);
+        //        isOn = true;
+        //    }
+        //}
 
 
         waterNodes[0] = transform.position;
