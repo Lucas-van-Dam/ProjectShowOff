@@ -9,6 +9,8 @@ public class VFAbilityController : MonoBehaviour
     private WaterCastScript waterCastScript;
     [SerializeField]
     private MeltIce meltIceScript;
+    
+    PlayerMovementAdvanced characterController;
 
     bool castingWater;
     bool castingFire;
@@ -24,6 +26,8 @@ public class VFAbilityController : MonoBehaviour
         {
             meltIceScript = GetComponentInChildren<MeltIce>();
         }
+
+        characterController = GetComponentInParent<PlayerMovementAdvanced>();
     }
 
     // Update is called once per frame
@@ -69,6 +73,11 @@ public class VFAbilityController : MonoBehaviour
                 meltIceScript.stopCasting();
                 castingFire = false;
             }
+        }
+
+        if(castingWater || castingFire)
+        {
+            characterController.state = PlayerMovementAdvanced.MovementState.freeze;
         }
     }
 }

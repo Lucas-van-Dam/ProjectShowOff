@@ -30229,6 +30229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca2f37b59ad2e4419e43c79ae424d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterCastScript: {fileID: 3963886061178639419}
+  meltIceScript: {fileID: 1512787985546594203}
 --- !u!4 &900852964487915126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1bea00879b6e58641a267014313bddea,
