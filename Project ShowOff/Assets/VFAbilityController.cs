@@ -77,7 +77,11 @@ public class VFAbilityController : MonoBehaviour
 
         if(castingWater || castingFire)
         {
-            characterController.state = PlayerMovementAdvanced.MovementState.freeze;
+            characterController.freeze = true;
+        }
+        else
+        {
+            characterController.freeze = false;
         }
     }
 }
