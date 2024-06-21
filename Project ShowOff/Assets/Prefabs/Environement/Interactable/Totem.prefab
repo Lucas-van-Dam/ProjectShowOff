@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8553874020324387225}
   m_Layer: 0
   m_Name: Totem
-  m_TagString: Untagged
+  m_TagString: Totem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -4290306308187931840, guid: 5649f1840836aa544a5b8e1110977f52,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6312858800777442536}
   m_SourcePrefab: {fileID: 100100000, guid: 5649f1840836aa544a5b8e1110977f52, type: 3}
 --- !u!4 &3298971883959238307 stripped
 Transform:
@@ -111,3 +115,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3045264640597121352}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7941870526883848712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4290306308187931840, guid: 5649f1840836aa544a5b8e1110977f52,
+    type: 3}
+  m_PrefabInstance: {fileID: 3045264640597121352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6312858800777442536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941870526883848712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.003134, y: 1.1878121, z: 0.8831787}
+  m_Center: {x: -0.0043799877, y: 0.19852197, z: 0.029418945}
