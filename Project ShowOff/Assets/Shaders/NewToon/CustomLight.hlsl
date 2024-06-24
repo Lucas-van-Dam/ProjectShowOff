@@ -34,6 +34,8 @@ struct LightOutput
 {
     float3 Diffuse;
     float3 Specular;
+    float3 LightColor;
+    int amountOfLights;
 };
 
 // Translate a [0, 1] smoothness value to an exponent 
@@ -73,6 +75,7 @@ LightOutput CustomLightHandling(CustomLightingData d, Light light) {
     LightOutput output;
     output.Diffuse = diffuse * d.albedo * radiance;
     output.Specular = specular * d.albedo * radiance;
+    output.LightColor = light.color;
     
     //float3 color = d.albedo * radiance * (diffuse + specular);
     
@@ -89,6 +92,8 @@ LightOutput CalculateCustomLighting(CustomLightingData d) {
     LightOutput output;
     output.Diffuse = d.albedo * intensity;
     output.Specular = d.albedo *intensity;
+    output.LightColor = float3(1.0,1.0,1.0);
+    output.amountOfLights = 1;
     return output;
 #else
     // Get the main light. Located in URP/ShaderLibrary/Lighting.hlsl
@@ -100,6 +105,7 @@ LightOutput CalculateCustomLighting(CustomLightingData d) {
     LightOutput output = CustomLightHandling(d, mainLight);
     
     output.Diffuse += CustomGlobalIllumination(d);
+    output.amountOfLights = 1;
     // Shade the main light
 
     #ifdef _ADDITIONAL_LIGHTS
@@ -110,6 +116,8 @@ LightOutput CalculateCustomLighting(CustomLightingData d) {
             LightOutput additionalOutput = CustomLightHandling(d, light);
             output.Diffuse += additionalOutput.Diffuse;
             output.Specular += additionalOutput.Specular;
+            output.LightColor += additionalOutput.LightColor;
+            output.amountOfLights += 1;
         }
     #endif
 
@@ -122,7 +130,7 @@ LightOutput CalculateCustomLighting(CustomLightingData d) {
 void CalculateCustomLighting_float(float3 Position, float3 Normal, float3 ViewDirection,
     float3 Albedo, float Smoothness, float AmbientOcclusion,
     float2 LightmapUV,
-    out float3 Diffuse, out float3 Specular) {
+    out float3 Diffuse, out float3 Specular, out float3 LightColor) {
 
     CustomLightingData d;
     d.positionWS = Position;
@@ -173,6 +181,7 @@ void CalculateCustomLighting_float(float3 Position, float3 Normal, float3 ViewDi
     LightOutput output = CalculateCustomLighting(d);
     Diffuse = output.Diffuse;
     Specular = output.Specular;
+    LightColor = output.LightColor / (output.amountOfLights * 1);
 }
 
 #endif
