@@ -23,7 +23,7 @@ public class BlockDestructionScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Joystick1Button3))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Joystick1Button3) && !pm.crouching)
         {
             pm.animator.SetTrigger("Chomp");
         }
