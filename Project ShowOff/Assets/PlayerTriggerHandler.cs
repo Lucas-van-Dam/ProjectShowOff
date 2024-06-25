@@ -8,7 +8,7 @@ public class PlayerTriggerHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager.instance.respawnPoint = transform.position;
+        UIManager.instance.respawnPoint = transform.parent.position;
     }
 
     // Update is called once per frame
@@ -23,12 +23,26 @@ public class PlayerTriggerHandler : MonoBehaviour
         {
             Destroy(other.gameObject);
             UIManager.instance.FragmentCollectedEvent();
+            switch(Random.Range(0, 3))
+            {
+                case 0:
+                    SoundManager.instance.PlaySound("pickup1");
+                    break;
+                case 1:
+                    SoundManager.instance.PlaySound("pickup2");
+                    break;
+                case 2:
+                    SoundManager.instance.PlaySound("pickup3");
+                    break;
+            }
+            
         }
 
         if (other.tag == "Totem")
         {
             Destroy(other.gameObject);
             UIManager.instance.TotemCollected();
+            SoundManager.instance.PlaySound("totem");
         }
 
         if(other.tag == "Locked")
@@ -42,6 +56,7 @@ public class PlayerTriggerHandler : MonoBehaviour
                 {
                     //Destroy(other.gameObject);
                     lockScript.Unlock();
+                    SoundManager.instance.PlaySound("unlock");
                 }
             }
         }

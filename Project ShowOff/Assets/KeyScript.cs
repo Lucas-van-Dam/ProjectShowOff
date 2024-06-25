@@ -76,6 +76,8 @@ public class KeyScript : MonoBehaviour
                 {
                     m_Image.sprite = keyStages[i+1];
                     UIManager.instance.keyTier = i + 1;
+
+                    SoundManager.instance.PlaySound("keylevelup");
                 }
 
                 break;

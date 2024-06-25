@@ -87,6 +87,9 @@ public class PlayerSwitching : MonoBehaviour
 
     public void SwitchCharacter(Characters character)
     {
+
+
+
         switch (character)
         {
             case Characters.VF:

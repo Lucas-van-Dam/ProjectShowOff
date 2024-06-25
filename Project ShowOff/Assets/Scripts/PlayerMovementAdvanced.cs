@@ -207,7 +207,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
             if (freeze)
             {
                 state = MovementState.freeze;
-                rb.velocity = Vector3.zero;
+                //rb.velocity = Vector3.zero;
                 desiredMoveSpeed = 0f;
             }
             else if (unlimited)
@@ -383,6 +383,19 @@ public class PlayerMovementAdvanced : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                SoundManager.instance.PlaySound("jump1");
+                break;
+            case 1:
+                SoundManager.instance.PlaySound("jump2");
+                break;
+            case 2:
+                SoundManager.instance.PlaySound("jump3");
+                break;
+        }
     }
     private void ResetJump()
     {

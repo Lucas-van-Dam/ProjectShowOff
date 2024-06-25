@@ -84,4 +84,20 @@ public class VFAbilityController : MonoBehaviour
             characterController.freeze = false;
         }
     }
+
+    private void OnDestroy()
+    {
+        if (castingFire)
+        {
+            meltIceScript.stopCasting();
+            castingFire = false;
+        }
+        if (castingWater)
+        {
+            waterCastScript.stopCasting();
+            castingWater = false;
+        }
+
+        characterController.freeze = false;
+    }
 }
