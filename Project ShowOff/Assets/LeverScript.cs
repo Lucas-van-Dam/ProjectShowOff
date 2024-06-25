@@ -29,24 +29,32 @@ public class LeverScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (triggerType == triggerType.Door)
+
+        if (triggeredObject.Length == 0)
         {
-
-            animator = new Animator[triggeredObject.Length];
-
-            for(int i = 0; i < triggeredObject.Length; i++)
-            {
-                animator[i] = triggeredObject[i].GetComponent<Animator>();
-            }
+            isOn = false;
         }
-        if (triggerType == triggerType.Platform)
+        else
         {
-
-            PlatformMover = new PlatformMover[triggeredObject.Length];
-
-            for (int i = 0; i < triggeredObject.Length; i++)
+            if (triggerType == triggerType.Door)
             {
-                PlatformMover[i] = triggeredObject[i].GetComponent<PlatformMover>();
+
+                animator = new Animator[triggeredObject.Length];
+
+                for (int i = 0; i < triggeredObject.Length; i++)
+                {
+                    animator[i] = triggeredObject[i].GetComponent<Animator>();
+                }
+            }
+            if (triggerType == triggerType.Platform)
+            {
+
+                PlatformMover = new PlatformMover[triggeredObject.Length];
+
+                for (int i = 0; i < triggeredObject.Length; i++)
+                {
+                    PlatformMover[i] = triggeredObject[i].GetComponent<PlatformMover>();
+                }
             }
         }
     }
