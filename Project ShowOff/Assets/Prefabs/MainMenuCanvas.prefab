@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 7326048487010355610}
+  player: {fileID: 0}
 --- !u!1 &2994162504876992052
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6728f882018812b43906deb00f9668b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f29d34c2d8a937747b047c9dcec78b48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
