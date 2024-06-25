@@ -34,12 +34,6 @@
         },
         {
             "m_Id": "566e9a6f42dc4c9796f05b540b29a37d"
-        },
-        {
-            "m_Id": "a4097d7468b046b598363b8ca6ddd71a"
-        },
-        {
-            "m_Id": "2b3ce701b419467db5eb4163b6dd109f"
         }
     ],
     "m_Dropdowns": [],
@@ -485,31 +479,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.ShaderKeyword",
-    "m_ObjectId": "2b3ce701b419467db5eb4163b6dd109f",
-    "m_Guid": {
-        "m_GuidSerialized": "7af47b40-e8b7-464d-834e-4a4e8f1b78df"
-    },
-    "m_Name": "LIGHTMAP_ON",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "LIGHTMAP_ON",
-    "m_DefaultReferenceName": "_LIGHTMAP_ON",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_KeywordType": 0,
-    "m_KeywordDefinition": 0,
-    "m_KeywordScope": 0,
-    "m_KeywordStages": 63,
-    "m_Entries": [],
-    "m_Value": 0,
-    "m_IsEditable": true
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "30be9cdb53a24446a8689ed021750f60",
@@ -583,7 +552,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "_MAIN_LIGHT_SHADOWS_CASCADE",
     "m_DefaultReferenceName": "_MAIN_LIGHT_SHADOWS_CASCADE",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "MAIN_LIGHT_SHADOWS_CASCADE",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
@@ -777,7 +746,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "LIGHTMAP_SHADOW_MIXING",
     "m_DefaultReferenceName": "_LIGHTMAP_SHADOW_MIXING",
-    "m_OverrideReferenceName": "LIGHTMAP_SHADOW_MIXING",
+    "m_OverrideReferenceName": "_LIGHTMAP_SHADOW_MIXING",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
@@ -887,12 +856,6 @@
         },
         {
             "m_Id": "566e9a6f42dc4c9796f05b540b29a37d"
-        },
-        {
-            "m_Id": "a4097d7468b046b598363b8ca6ddd71a"
-        },
-        {
-            "m_Id": "2b3ce701b419467db5eb4163b6dd109f"
         }
     ]
 }
@@ -982,7 +945,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "_SHADOWS_SOFT",
     "m_DefaultReferenceName": "_SHADOWS_SOFT",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "SHADOWS_SOFT",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
@@ -1055,31 +1018,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.ShaderKeyword",
-    "m_ObjectId": "a4097d7468b046b598363b8ca6ddd71a",
-    "m_Guid": {
-        "m_GuidSerialized": "a322c541-a5b9-42c9-b69b-bdbc8723be14"
-    },
-    "m_Name": "_MIXED_LIGHTING_SUBTRACTIVE",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "_MIXED_LIGHTING_SUBTRACTIVE",
-    "m_DefaultReferenceName": "_MIXED_LIGHTING_SUBTRACTIVE",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_KeywordType": 0,
-    "m_KeywordDefinition": 0,
-    "m_KeywordScope": 0,
-    "m_KeywordStages": 63,
-    "m_Entries": [],
-    "m_Value": 0,
-    "m_IsEditable": true
 }
 
 {
@@ -1358,7 +1296,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "_MAIN_LIGHT_SHADOWS",
     "m_DefaultReferenceName": "_MAIN_LIGHT_SHADOWS",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "MAIN_LIGHT_SHADOWS",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",

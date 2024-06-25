@@ -10084,6 +10084,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2021450434173424121, guid: 9ebbbfc670b45ed42958ee5530da4d22,
+        type: 3}
+      propertyPath: m_XAxis.Value
+      value: 98.678375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869431242887540121, guid: 9ebbbfc670b45ed42958ee5530da4d22,
+        type: 3}
+      propertyPath: m_XAxis.Value
+      value: 98.678375
+      objectReference: {fileID: 0}
     - target: {fileID: 3542823910269007845, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10248,6 +10258,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000063329935
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187803911093192096, guid: 9ebbbfc670b45ed42958ee5530da4d22,
+        type: 3}
+      propertyPath: m_XAxis.Value
+      value: 98.678375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8623409677204899830, guid: 9ebbbfc670b45ed42958ee5530da4d22,
+        type: 3}
+      propertyPath: m_XAxis.Value
+      value: 98.678375
       objectReference: {fileID: 0}
     - target: {fileID: 9171234165475238074, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
