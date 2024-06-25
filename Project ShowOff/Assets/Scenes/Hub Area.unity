@@ -10075,12 +10075,12 @@ PrefabInstance:
     - target: {fileID: 3585338771790517403, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000003874302
+      value: 0.0000004172325
       objectReference: {fileID: 0}
     - target: {fileID: 3585338771790517403, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000059604645
+      value: -0.000000052154064
       objectReference: {fileID: 0}
     - target: {fileID: 4024158161632906418, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
@@ -12895,6 +12895,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3066291908778191546, guid: 9c2c9f201618ff841ae097a86536d4c3, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 628160029134190818, guid: 9c2c9f201618ff841ae097a86536d4c3,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8485250838199110184, guid: 9c2c9f201618ff841ae097a86536d4c3,
         type: 3}
       insertIndex: 2
@@ -12956,4 +12960,3 @@ SceneRoots:
   - {fileID: 1675927408}
   - {fileID: 1188803649}
   - {fileID: 226905236}
-  - {fileID: 0}
