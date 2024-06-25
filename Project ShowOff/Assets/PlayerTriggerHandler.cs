@@ -8,7 +8,7 @@ public class PlayerTriggerHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager.instance.respawnPoint = transform.position;
+        UIManager.instance.respawnPoint = transform.parent.position;
     }
 
     // Update is called once per frame
