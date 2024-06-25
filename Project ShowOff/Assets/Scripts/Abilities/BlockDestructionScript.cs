@@ -26,6 +26,7 @@ public class BlockDestructionScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             pm.animator.SetTrigger("Chomp");
+            SoundManager.instance.PlaySound("bite");
         }
     }
 
@@ -38,6 +39,7 @@ public class BlockDestructionScript : MonoBehaviour
             {
                 pm.animator.SetTrigger("Chomp");
                 other.GetComponent<DestructibleBlock>().DestroyThis();
+                SoundManager.instance.PlaySound("rockcrumble");
             }
         }
 

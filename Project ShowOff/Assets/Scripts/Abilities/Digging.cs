@@ -24,12 +24,14 @@ public class Digging : MonoBehaviour
             if (pm.crouching)
             {
                 pm.StopDigging();
-                
+
+                SoundManager.instance.StopLoop("digging");
             }
             else
             {
                 pm.StartDigging();
-                
+
+                SoundManager.instance.PlayLoop("digging");
             }
         }
     }
@@ -37,5 +39,7 @@ public class Digging : MonoBehaviour
     private void OnDestroy()
     {
         pm.StopDigging();
+
+        SoundManager.instance.StopLoop("digging");
     }
 }

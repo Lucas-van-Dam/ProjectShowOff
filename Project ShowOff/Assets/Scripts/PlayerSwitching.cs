@@ -88,33 +88,38 @@ public class PlayerSwitching : MonoBehaviour
     public void SwitchCharacter(Characters character)
     {
 
-
-
-        switch (character)
+        if (currentCharacter != character)
         {
-            case Characters.VF:
-                SetVariables(VFData);
-                UIManager.instance.changeCharacter(0);
-                break;
+            switch (character)
+            {
+                case Characters.VF:
+                    SetVariables(VFData);
+                    UIManager.instance.changeCharacter(0);
+                    currentCharacter = Characters.VF;
+                    break;
 
-            case Characters.Cutizylo:
-                SetVariables(CutizyloData);
-                UIManager.instance.changeCharacter(1);
-                break;
+                case Characters.Cutizylo:
+                    SetVariables(CutizyloData);
+                    UIManager.instance.changeCharacter(1);
+                    currentCharacter = Characters.Cutizylo;
+                    break;
 
-            case Characters.Rex:
-                SetVariables(RexData);
-                UIManager.instance.changeCharacter(2);
-                break;
+                case Characters.Rex:
+                    SetVariables(RexData);
+                    UIManager.instance.changeCharacter(2);
+                    currentCharacter = Characters.Rex;
+                    break;
 
-            case Characters.Grecky:
-                SetVariables(GreckyData);
-                UIManager.instance.changeCharacter(3);
-                break;
+                case Characters.Grecky:
+                    SetVariables(GreckyData);
+                    UIManager.instance.changeCharacter(3);
+                    currentCharacter = Characters.Grecky;
+                    break;
 
-            default:
-                Debug.LogError("SOMETHING WENT WRONG WITH CHARACTER SWITCHING");
-                break;
+                default:
+                    Debug.LogError("SOMETHING WENT WRONG WITH CHARACTER SWITCHING");
+                    break;
+            }
         }
     }
 
@@ -123,7 +128,9 @@ public class PlayerSwitching : MonoBehaviour
         movement.walkSpeed = data.walkSpeed;
         movement.sprintSpeed = data.sprintSpeed;
         movement.jumpForce = data.jumpPower;
-        
+
+        SoundManager.instance.PlaySound("switchcharacter");
+
         //SET MODEL
         for (int i = graphicsHolder.transform.childCount - 1; i > -1; i--)
         {

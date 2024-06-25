@@ -81,6 +81,8 @@ public class LeverScript : MonoBehaviour
                     }
                 }
 
+                SoundManager.instance.PlaySound("lever");
+
                 if(onlyOnce)
                 {
                     isOn = false;
