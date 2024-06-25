@@ -207,7 +207,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
             if (freeze)
             {
                 state = MovementState.freeze;
-                rb.velocity = Vector3.zero;
+                //rb.velocity = Vector3.zero;
                 desiredMoveSpeed = 0f;
             }
             else if (unlimited)
