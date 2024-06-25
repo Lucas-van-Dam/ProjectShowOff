@@ -10125,17 +10125,17 @@ PrefabInstance:
     - target: {fileID: 6549269855481639991, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99329627
+      value: 0.9932962
       objectReference: {fileID: 0}
     - target: {fileID: 6549269855481639991, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11559683
+      value: 0.11559686
       objectReference: {fileID: 0}
     - target: {fileID: 6549269855481639991, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000005364418
+      value: 0.0000005066395
       objectReference: {fileID: 0}
     - target: {fileID: 6549269855481639991, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
@@ -10155,17 +10155,17 @@ PrefabInstance:
     - target: {fileID: 6824326305963233208, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11559685
+      value: 0.11559686
       objectReference: {fileID: 0}
     - target: {fileID: 6824326305963233208, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000005662441
+      value: 0.0000005364418
       objectReference: {fileID: 0}
     - target: {fileID: 6824326305963233208, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000063329935
+      value: -0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 7187803911093192096, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
@@ -12895,10 +12895,6 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3066291908778191546, guid: 9c2c9f201618ff841ae097a86536d4c3, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 628160029134190818, guid: 9c2c9f201618ff841ae097a86536d4c3,
-        type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8485250838199110184, guid: 9c2c9f201618ff841ae097a86536d4c3,
         type: 3}
       insertIndex: 2
