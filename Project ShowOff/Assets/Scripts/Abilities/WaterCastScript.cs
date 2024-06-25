@@ -89,12 +89,16 @@ public class WaterCastScript : MonoBehaviour
     {
         pm.animator.SetBool("Water", true);
         isOn = true;
+
+        SoundManager.instance.PlayLoop("spraywater");
     }
 
     public void stopCasting()
     {
         pm.animator.SetBool("Water", false);
         isOn = false;
+
+        SoundManager.instance.StopLoop("spraywater");
     }
 
     // Update is called once per frame

@@ -44,6 +44,6 @@ Material:
     - _FinalMultiply: 0.42
     - _ScrollSpeed: 0.2
     - _ShadowCornerStrength: 0.008
-    - _Transparancy: 0
+    - _Transparancy: 1.7e-44
     m_Colors: []
   m_BuildTextureStacks: []
