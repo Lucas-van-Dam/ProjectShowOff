@@ -67,6 +67,8 @@ public class SpawnPlatform : MonoBehaviour
                     spawnedObject.SetActive(true);
                     spawningGhost.SetActive(false);
                     isSpawning = false;
+
+                    SoundManager.instance.PlaySound("placeplatform");
                 }
                 else
                 {

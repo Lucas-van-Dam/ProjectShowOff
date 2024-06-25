@@ -69,6 +69,7 @@ public class MeltIce : MonoBehaviour
         pm.animator.SetBool("Fire", true);
         FlameThrowerParticles.Play();
         FlameThrowerLightParticles.Play();
+        SoundManager.instance.PlayLoop("flamethrower");
     }
 
     public void stopCasting()
@@ -77,6 +78,7 @@ public class MeltIce : MonoBehaviour
         pm.animator.SetBool("Fire", false);
         FlameThrowerParticles.Stop();
         FlameThrowerLightParticles.Stop();
+        SoundManager.instance.StopLoop("flamethrower");
     }
 
     private void OnTriggerStay(Collider other)

@@ -55,6 +55,7 @@ public class ButtonScript : MonoBehaviour
             if (triggerType == triggerType.Door)
             {
                 animator.SetTrigger("OpenDoor");
+                SoundManager.instance.PlaySound("opendoor");
                 nextTime = Time.time + timer;
 
                 Debug.Log(nextTime);
