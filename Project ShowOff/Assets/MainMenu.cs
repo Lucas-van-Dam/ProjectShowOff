@@ -14,11 +14,9 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         mainMenu.SetActive(false);
-<<<<<<< HEAD
 
         player = GameObject.FindWithTag("Player");
-=======
->>>>>>> b1140e565702bfd2ca611fcd930395e791e237d1
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
