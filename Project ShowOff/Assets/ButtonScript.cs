@@ -52,6 +52,9 @@ public class ButtonScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
+            SoundManager.instance.PlaySound("buttonclick");
+
             if (triggerType == triggerType.Door)
             {
                 animator.SetTrigger("OpenDoor");

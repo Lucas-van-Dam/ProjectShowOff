@@ -90,7 +90,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(string key)
     {
-        Debug.Log(soundsMapped[key].volume);
         audioSource.PlayOneShot(soundsMapped[key].clip, soundsMapped[key].volume);
     }
 
@@ -102,7 +101,6 @@ public class SoundManager : MonoBehaviour
     public void StopLoop(string key)
     {
         soundsMapped[key].source.Stop();
-        //audioSource.PlayOneShot(soundsMapped[key].clip);
     }
 
 }

@@ -73,5 +73,10 @@ public class PlayerTriggerHandler : MonoBehaviour
         {
             transform.position = UIManager.instance.respawnPoint;
         }
+        if(collision.collider.tag == "Water")
+        {
+            SoundManager.instance.PlaySound("splash");
+            transform.position = UIManager.instance.respawnPoint;
+        }
     }
 }

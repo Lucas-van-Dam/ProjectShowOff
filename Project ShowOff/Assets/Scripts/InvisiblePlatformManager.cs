@@ -79,6 +79,7 @@ public class InvisiblePlatformManager : MonoBehaviour
 
         if (visible)
         {
+            SoundManager.instance.PlaySound("vision");
             return 1;
         }
 
