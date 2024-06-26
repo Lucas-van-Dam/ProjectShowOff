@@ -147,6 +147,11 @@ PrefabInstance:
       propertyPath: switchTo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7011638721264534750, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
+        type: 3}
+      propertyPath: m_TagString
+      value: RespawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 7376525036568084248, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_Name

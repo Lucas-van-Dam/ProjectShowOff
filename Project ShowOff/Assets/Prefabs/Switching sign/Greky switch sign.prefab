@@ -90,37 +90,37 @@ PrefabInstance:
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 823.44745
+      value: 957.5368
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 159.33824
+      value: 0.09997749
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 526.29205
+      value: 718.40967
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6475199
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.76204854
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -99.29
       objectReference: {fileID: 0}
     - target: {fileID: 1792405013647602264, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
@@ -146,6 +146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: switchTo
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7011638721264534750, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
+        type: 3}
+      propertyPath: m_TagString
+      value: RespawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 7376525036568084248, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
