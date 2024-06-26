@@ -39,16 +39,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _BottomBrightness: 2
-    - _BottomStrength: 2.53
+    - _BottomStrength: 2.6
     - _Erosion: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RippleAmount: 7.24
+    - _RippleAmount: 8.83
     - _VertexOffsetAmount: 0
-    - _VoronaiScale: 89.6
-    - _VoronaiSpeed: 0.82
+    - _VoronaiScale: 100.06
+    - _VoronaiSpeed: 2.3
     m_Colors:
-    - _RippleColor: {r: 0.1585973, g: 0.7467723, b: 0.8490566, a: 1}
+    - _RippleColor: {r: 0, g: 0.9734734, b: 1.1486983, a: 1}
     - _RippleSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3549910594217733836
