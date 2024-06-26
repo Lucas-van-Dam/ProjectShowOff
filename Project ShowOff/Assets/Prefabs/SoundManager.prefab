@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5853133870380845349}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 577.7451, y: 132.60892, z: 711.69745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -110,6 +110,42 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 580bb5ec6d9ffb2448a041eb508bacf9, type: 3}
     looping: 0
     volume: 1
+  - key: lever
+    audio: {fileID: 8300000, guid: 8d1d5b5f4df290a48b314d4b00f488d6, type: 3}
+    looping: 0
+    volume: 1
+  - key: switchcharacter
+    audio: {fileID: 8300000, guid: 93c3527f14b1d2a4d8109ee81c45e080, type: 3}
+    looping: 0
+    volume: 1
+  - key: float
+    audio: {fileID: 8300000, guid: f53466c6fc874884c8894ede87633c5b, type: 3}
+    looping: 1
+    volume: 1
+  - key: bite
+    audio: {fileID: 8300000, guid: 2c68119c55921f844a184d82d1ac98a0, type: 3}
+    looping: 0
+    volume: 0.4
+  - key: digging
+    audio: {fileID: 8300000, guid: edeeaa2157bb1694ca19a864e3116472, type: 3}
+    looping: 1
+    volume: 1
+  - key: moveplatform
+    audio: {fileID: 8300000, guid: cbd444dcb40d709459eda96d72f0a613, type: 3}
+    looping: 1
+    volume: 1
+  - key: vision
+    audio: {fileID: 8300000, guid: ef71bae269de4184d98331b802cb43f3, type: 3}
+    looping: 0
+    volume: 1
+  - key: rockcrumble
+    audio: {fileID: 8300000, guid: ce90aaf3d885b404e89fb7092bdca873, type: 3}
+    looping: 0
+    volume: 0.172
+  - key: splash
+    audio: {fileID: 8300000, guid: 60285ed46d85de7428978a5ffc1c6a76, type: 3}
+    looping: 0
+    volume: 0.225
   audioSource: {fileID: 4773755017049806646}
 --- !u!82 &4773755017049806646
 AudioSource:
