@@ -55,7 +55,7 @@ public class SoundManager : MonoBehaviour
 
         soundsMapped = new Dictionary<string, audioContainer>();
 
-        for(int i = 0; i < sounds.Length; i++)
+        for (int i = 0; i < sounds.Length; i++)
         {
             if (!sounds[i].looping)
             {
@@ -72,7 +72,7 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        if(audioSource == null)
+        if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
         }
@@ -90,17 +90,26 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(string key)
     {
-        audioSource.PlayOneShot(soundsMapped[key].clip, soundsMapped[key].volume);
+        if (soundsMapped.ContainsKey(key))
+        {
+            audioSource.PlayOneShot(soundsMapped[key].clip, soundsMapped[key].volume);
+        }
     }
 
     public void PlayLoop(string key)
     {
-        soundsMapped[key].source.Play();
+        if (soundsMapped.ContainsKey(key))
+        {
+            soundsMapped[key].source.Play();
+        }
     }
 
     public void StopLoop(string key)
     {
-        soundsMapped[key].source.Stop();
+        if (soundsMapped.ContainsKey(key))
+        {
+            soundsMapped[key].source.Stop();
+        }
     }
 
 }
