@@ -79,4 +79,9 @@ public class Dash : MonoBehaviour
         Debug.Log("Stopped Dashing");
         pm.dashing = false;
     }
+
+    private void OnDestroy()
+    {
+        pm.dashing = false;
+    }
 }

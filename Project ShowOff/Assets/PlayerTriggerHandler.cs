@@ -5,6 +5,9 @@ using UnityEngine.Rendering.UI;
 
 public class PlayerTriggerHandler : MonoBehaviour
 {
+
+    bool respawnNextPhysUpdate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,5 +81,19 @@ public class PlayerTriggerHandler : MonoBehaviour
             SoundManager.instance.PlaySound("splash");
             transform.position = UIManager.instance.respawnPoint;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (respawnNextPhysUpdate)
+        {
+            transform.position = UIManager.instance.respawnPoint;
+            respawnNextPhysUpdate = false;
+        }
+    }
+
+    public void ResetPosition()
+    {
+        respawnNextPhysUpdate = true;
     }
 }
