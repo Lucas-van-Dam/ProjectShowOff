@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
 
@@ -81,6 +82,10 @@ public class UIManager : MonoBehaviour
         Debug.Log("Totem Got");
         TotemsParent.transform.GetChild(Totems).GetComponent<Image>().sprite = totemCollectedSprite;
         Totems++;
+        if (Totems == 4)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void changeCharacter(int character)

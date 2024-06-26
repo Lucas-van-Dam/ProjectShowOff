@@ -23,9 +23,9 @@ public class MainerMenu : MonoBehaviour
         {
             sceneSwitch.scene_changer("Hub Area");
         }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
-        {
-            sceneSwitch.QuitGame();
-        }
+        // if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        // {
+        //     sceneSwitch.QuitGame();
+        // }
     }
 }
