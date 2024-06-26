@@ -26,9 +26,22 @@ public class LeverScript : MonoBehaviour
 
     bool playerInRange;
 
+    [SerializeField]
+    Transform animating;
+    float target;
+    float currentAngle;
+
+    [SerializeField]
+    float leverRotSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        if(animating == null)
+        {
+            animating = transform.GetChild(0);
+        }
 
         if (triggeredObject.Length == 0)
         {
@@ -81,6 +94,20 @@ public class LeverScript : MonoBehaviour
                     }
                 }
 
+                if(animating != null)
+                {
+                    if(target == 0)
+                    {
+                        target = 140;
+                        currentAngle = 1;
+                    }
+                    else
+                    {
+                        target = 0;
+                        currentAngle = 139;
+                    }
+                }
+
                 SoundManager.instance.PlaySound("lever");
 
                 if(onlyOnce)
@@ -89,6 +116,20 @@ public class LeverScript : MonoBehaviour
                 }
             }
         }
+
+        if(currentAngle > 0 && currentAngle < 140)
+        {
+            if (target == 0)
+            {
+                currentAngle -= leverRotSpeed;
+            }
+            else
+            {
+                currentAngle += leverRotSpeed;
+            }
+        }
+
+        animating.localRotation = Quaternion.Euler(new Vector3(currentAngle, 0, 0));
     }
 
     private void OnTriggerEnter(Collider other)
