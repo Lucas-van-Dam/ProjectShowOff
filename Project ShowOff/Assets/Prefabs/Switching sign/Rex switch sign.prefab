@@ -157,6 +157,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rex switch sign
       objectReference: {fileID: 0}
+    - target: {fileID: 7376525036568084248, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
+        type: 3}
+      propertyPath: m_TagString
+      value: RespawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 8186176537133724907, guid: 4f5b7b2ba9642f542aef3ed0f00c3853,
         type: 3}
       propertyPath: m_Enabled

@@ -66,7 +66,7 @@ public class PlayerTriggerHandler : MonoBehaviour
 
         if(other.tag == "RespawnPoint")
         {
-            UIManager.instance.respawnPoint = other.transform.position;
+            UIManager.instance.respawnPoint = other.transform.position + Vector3.up * 2;
         }
     }
 
