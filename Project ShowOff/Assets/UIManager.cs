@@ -40,6 +40,10 @@ public class UIManager : MonoBehaviour
 
     public Vector3 respawnPoint;
 
+    [SerializeField]
+    GameObject endGame/
+        ;
+
     private void Awake()
     {
         if (instance == null)
@@ -84,7 +88,8 @@ public class UIManager : MonoBehaviour
         Totems++;
         if (Totems == 4)
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
+            endGame.SetActive(true);
         }
     }
 
@@ -104,5 +109,11 @@ public class UIManager : MonoBehaviour
         characterSwitcher.gameObject.SetActive(toggle);
 
         characterSwitchingSpriteSlot.sprite = CharacterSwitchingSprite[character];
+    }
+
+    public void EndGame()
+    {
+        //end the game here
+        SceneManager.LoadScene(0);
     }
 }

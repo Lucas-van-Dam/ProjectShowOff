@@ -15,6 +15,7 @@ TagManager:
   - RespawnPoint
   - ResetPlayer
   - Water
+  - EndGame
   layers:
   - Default
   - TransparentFX

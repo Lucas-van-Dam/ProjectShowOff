@@ -81,6 +81,10 @@ public class PlayerTriggerHandler : MonoBehaviour
             SoundManager.instance.PlaySound("splash");
             transform.position = UIManager.instance.respawnPoint;
         }
+        if(collision.collider.tag == "EndGame")
+        {
+            UIManager.instance.EndGame();
+        }
     }
 
     private void FixedUpdate()
