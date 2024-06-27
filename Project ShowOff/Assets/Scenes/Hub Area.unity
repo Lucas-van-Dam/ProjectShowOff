@@ -6904,6 +6904,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnZones
       objectReference: {fileID: 0}
+    - target: {fileID: 7093231517799114768, guid: 25918534420d1d64e93e46e10d1a36e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 585.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093231517799114768, guid: 25918534420d1d64e93e46e10d1a36e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 740.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093231517799114768, guid: 25918534420d1d64e93e46e10d1a36e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94931674
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093231517799114768, guid: 25918534420d1d64e93e46e10d1a36e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.31432095
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093231517799114768, guid: 25918534420d1d64e93e46e10d1a36e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -36.64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -16578,7 +16603,7 @@ PrefabInstance:
     - target: {fileID: 4024573672969549981, guid: 017def1ff79696c4ca83ade713858ec2,
         type: 3}
       propertyPath: m_Size.y
-      value: 3.62
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 4024573672969549981, guid: 017def1ff79696c4ca83ade713858ec2,
         type: 3}
@@ -18263,7 +18288,7 @@ PrefabInstance:
     - target: {fileID: 3585338771790517403, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13870166
+      value: 0.13870165
       objectReference: {fileID: 0}
     - target: {fileID: 3585338771790517403, guid: 9ebbbfc670b45ed42958ee5530da4d22,
         type: 3}

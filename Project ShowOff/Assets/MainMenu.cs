@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
             return;
 
         Vector2 dpadInput = new Vector2(Input.GetAxisRaw("DPADHorizontal"), Input.GetAxisRaw("DPADVertical"));
-        if (Mathf.Abs(dpadInput.x) >= 0.2f)
+        if (Mathf.Abs(dpadInput.x) >= 0.8f)
         {
             if (dpadInput.x > 0)
             {
@@ -64,11 +64,12 @@ public class MainMenu : MonoBehaviour
             }
             if (dpadInput.x < 0)
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             }
             return;
         }
-        if (Mathf.Abs(dpadInput.y) >= 0.2f)
+        if (Mathf.Abs(dpadInput.y) >= 0.8f)
         {
             if (dpadInput.y > 0)
             {
@@ -78,6 +79,9 @@ public class MainMenu : MonoBehaviour
             if (dpadInput.y < 0)
             {
                 player.ResetPosition();
+                Time.timeScale = 1;
+                MainMenuActive = !MainMenuActive;
+                mainMenu.SetActive(MainMenuActive);
             }
         }
     }
