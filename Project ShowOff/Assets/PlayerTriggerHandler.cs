@@ -72,7 +72,7 @@ public class PlayerTriggerHandler : MonoBehaviour
         {
 
             //END THE GAME
-            UIManager.instance.EndGame();
+            UIManager.instance.OpenEndGameCanvas();
         }
     }
 

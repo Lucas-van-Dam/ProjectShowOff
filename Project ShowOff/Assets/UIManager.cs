@@ -43,6 +43,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject endGame;
 
+    [SerializeField]
+    GameObject endGameCanvas;
+
     private void Awake()
     {
         if (instance == null)
@@ -114,5 +117,10 @@ public class UIManager : MonoBehaviour
     {
         //end the game here
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenEndGameCanvas()
+    {
+        endGameCanvas.SetActive(true);
     }
 }
