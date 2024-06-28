@@ -32,7 +32,7 @@ public class Dash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(pm.jumpKey))
+        if (Input.GetKeyDown(pm.jumpKey)) 
         {
             if (!pm.dashing)
                 return;
@@ -53,6 +53,13 @@ public class Dash : MonoBehaviour
             SoundManager.instance.PlaySound("rexboost");
         }
 
+        if (Input.GetKeyDown(KeyCode.Q) && !pm.dashing)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DoDash());
+
+            SoundManager.instance.PlaySound("rexboost");
+        }
 
     }
 
@@ -77,6 +84,11 @@ public class Dash : MonoBehaviour
             counter++;
         }
         Debug.Log("Stopped Dashing");
+        pm.dashing = false;
+    }
+
+    private void OnDestroy()
+    {
         pm.dashing = false;
     }
 }

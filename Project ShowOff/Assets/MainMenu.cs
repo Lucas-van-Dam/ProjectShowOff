@@ -9,13 +9,17 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private GameObject mainMenu;
 
-    [SerializeField] private GameObject player;
+    [SerializeField] private PlayerTriggerHandler player;
     // Start is called before the first frame update
     void Start()
     {
         mainMenu.SetActive(false);
 
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform.parent.gameObject.GetComponentInChildren<PlayerTriggerHandler>();
+
+        Debug.Log(GameObject.FindGameObjectWithTag("Player"));
+        Debug.Log(player);
+
         Application.targetFrameRate = 60;
     }
 
@@ -40,11 +44,16 @@ public class MainMenu : MonoBehaviour
             // }
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            player.ResetPosition();
+        }
+
         if (!MainMenuActive)
             return;
 
         Vector2 dpadInput = new Vector2(Input.GetAxisRaw("DPADHorizontal"), Input.GetAxisRaw("DPADVertical"));
-        if (Mathf.Abs(dpadInput.x) >= 0.2f)
+        if (Mathf.Abs(dpadInput.x) >= 0.8f)
         {
             if (dpadInput.x > 0)
             {
@@ -55,11 +64,12 @@ public class MainMenu : MonoBehaviour
             }
             if (dpadInput.x < 0)
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             }
             return;
         }
-        if (Mathf.Abs(dpadInput.y) >= 0.2f)
+        if (Mathf.Abs(dpadInput.y) >= 0.8f)
         {
             if (dpadInput.y > 0)
             {
@@ -68,7 +78,10 @@ public class MainMenu : MonoBehaviour
             }
             if (dpadInput.y < 0)
             {
-                player.transform.position = UIManager.instance.respawnPoint;
+                player.ResetPosition();
+                Time.timeScale = 1;
+                MainMenuActive = !MainMenuActive;
+                mainMenu.SetActive(MainMenuActive);
             }
         }
     }

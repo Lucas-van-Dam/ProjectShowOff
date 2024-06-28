@@ -35,7 +35,8 @@ Transform:
   m_LocalPosition: {x: 574.08, y: 0.492, z: 496.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4866382434055073991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9021238783800586591
@@ -53,7 +54,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160773096435142004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -66,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f0856db7e181904ba728045049ecb29, type: 2}
+  - {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +125,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 2607836105808805714}
   selfCollider: {fileID: 7800007388198803061}
   selfCollider2: {fileID: 9109485972995717036}
-  mR: {fileID: 4300669636551898299}
+  mR: {fileID: 6597120633380316797}
   wobbleIntensity: 0.1
   wobbleSpeed: 5
 --- !u!198 &2607836105808805714
@@ -1070,7 +1071,7 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - serializedVersion: 2
-      time: 0
+      time: 0.001
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -4938,7 +4939,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8221557716172507010, guid: 1f1e95530f0ae3e49a8a2ec256f206e3, type: 3}
+  - {fileID: -876546973899608171, guid: f2363a8b3068f60418adae7e9a11c625, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5012,3 +5013,86 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2658008472695677913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4866382434055073991}
+  - component: {fileID: 6807093965375424537}
+  - component: {fileID: 6597120633380316797}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4866382434055073991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658008472695677913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.093830004, z: -0, w: 0.99558824}
+  m_LocalPosition: {x: 1.573, y: -1.6879, z: 4.944}
+  m_LocalScale: {x: 0.2570123, y: 0.4569461, z: 0.24964009}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7604482354257782383}
+  m_LocalEulerAnglesHint: {x: 0, y: -10.768, z: 0}
+--- !u!33 &6807093965375424537
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658008472695677913}
+  m_Mesh: {fileID: 1219005719855755385, guid: 72a1345b5d72fc94c83cf69ed32f767f, type: 3}
+--- !u!23 &6597120633380316797
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658008472695677913}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 907a54369c7893744a2a3e82507f1973, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

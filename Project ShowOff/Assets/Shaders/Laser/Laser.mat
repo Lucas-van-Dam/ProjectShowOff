@@ -53,6 +53,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ScrollSpeed: 50
     m_Colors:
-    - _Color: {r: 0, g: 0.41259122, b: 1, a: 0}
+    - _Color: {r: 0, g: 0.0143482685, b: 1, a: 0}
   m_BuildTextureStacks: []
