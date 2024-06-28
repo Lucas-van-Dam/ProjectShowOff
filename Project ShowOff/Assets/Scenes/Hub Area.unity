@@ -25552,7 +25552,7 @@ PrefabInstance:
     - target: {fileID: 628160029134190818, guid: 9c2c9f201618ff841ae097a86536d4c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 159.33821
+      value: 159.3382
       objectReference: {fileID: 0}
     - target: {fileID: 628160029134190818, guid: 9c2c9f201618ff841ae097a86536d4c3,
         type: 3}
@@ -25609,6 +25609,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 685979713}
+    - target: {fileID: 735494133552095845, guid: 9c2c9f201618ff841ae097a86536d4c3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -241.8734
+      objectReference: {fileID: 0}
+    - target: {fileID: 735494133552095845, guid: 9c2c9f201618ff841ae097a86536d4c3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75.98615
+      objectReference: {fileID: 0}
     - target: {fileID: 843578276606418253, guid: 9c2c9f201618ff841ae097a86536d4c3,
         type: 3}
       propertyPath: m_Mesh
@@ -26294,6 +26304,11 @@ PrefabInstance:
       propertyPath: TotemsParent
       value: 
       objectReference: {fileID: 192583541}
+    - target: {fileID: 3117974122404572747, guid: 9c2c9f201618ff841ae097a86536d4c3,
+        type: 3}
+      propertyPath: endGameCanvas
+      value: 
+      objectReference: {fileID: 170779279}
     - target: {fileID: 3117974122404572747, guid: 9c2c9f201618ff841ae097a86536d4c3,
         type: 3}
       propertyPath: totemCollectedSprite
