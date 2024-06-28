@@ -41,8 +41,7 @@ public class UIManager : MonoBehaviour
     public Vector3 respawnPoint;
 
     [SerializeField]
-    GameObject endGame/
-        ;
+    GameObject endGame;
 
     private void Awake()
     {

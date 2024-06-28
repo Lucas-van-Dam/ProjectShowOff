@@ -68,6 +68,12 @@ public class PlayerTriggerHandler : MonoBehaviour
         {
             UIManager.instance.respawnPoint = other.transform.position + Vector3.up * 2;
         }
+        if (other.tag == "EndGame")
+        {
+
+            //END THE GAME
+            UIManager.instance.EndGame();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -80,10 +86,6 @@ public class PlayerTriggerHandler : MonoBehaviour
         {
             SoundManager.instance.PlaySound("splash");
             transform.position = UIManager.instance.respawnPoint;
-        }
-        if(collision.collider.tag == "EndGame")
-        {
-            UIManager.instance.EndGame();
         }
     }
 
