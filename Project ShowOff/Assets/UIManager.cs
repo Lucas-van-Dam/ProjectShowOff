@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
 
     public static event Action<int> FragmentCollected;
 
-    int fragments;
+    public int fragments;
     public int keyTier;
     int currentPlayer;
 
